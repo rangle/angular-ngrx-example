@@ -1,4 +1,6 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
+
+import {IVideoGame} from '../../interfaces/videoGame.interface';
 
 @Component({
   selector: 'video-games-listing',
@@ -7,6 +9,7 @@ import {Component} from '@angular/core';
 })
 export class VideoGamesListingComponent {
 
-
+  @Input()
+  videoGames: Array<IVideoGame>;
 
 }

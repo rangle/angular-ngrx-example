@@ -7,6 +7,10 @@ import {
   VideoGamesSearchComponent
 } from './components';
 
+import {VideoGamesService} from './services';
+
+import {VideoGameListingStore} from './store/videoGames.store';
+
 @NgModule({
   imports: [],
   declarations: [
@@ -15,7 +19,10 @@ import {
     VideoGamesListingComponent,
     VideoGamesSearchComponent
   ],
-  providers: []
+  providers: [
+    VideoGamesService,
+    VideoGameListingStore
+  ]
 })
 export class VideoGamesModule {
 
