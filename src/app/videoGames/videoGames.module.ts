@@ -1,4 +1,6 @@
 import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {EffectsModule} from '@ngrx/effects';
 
 import {
   VideoGamesContainerComponent,
@@ -9,10 +11,14 @@ import {
 
 import {VideoGamesService} from './services';
 
-import {VideoGameListingStore} from './store/videoGames.store';
+import {VideoGameListingStore} from './store/videoGameListing.store';
+import {VideoGamesEffects} from './store/videoGames.effects';
 
 @NgModule({
-  imports: [],
+  imports: [
+    CommonModule,
+    EffectsModule.run(VideoGamesEffects)
+  ],
   declarations: [
     VideoGamesContainerComponent,
     VideoGamesFilterComponent,

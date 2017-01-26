@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {Observable} from 'rxjs';
 
 import {IVideoGameListing} from '../../../interfaces/videoGameListing.interface';
-import {VideoGameListingStore} from '../../store/videoGames.store';
+import {VideoGameListingStore} from '../../store/videoGameListing.store';
 
 @Component({
   selector: 'video-games-container',
