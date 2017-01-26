@@ -1,5 +1,5 @@
-import {IVideoGameListing} from './videoGameListing.interface';
-import {IVideoGameDetail} from './videoGameDetail.interface';
+import {IVideoGameListing} from './videoGameListing/videoGameListing.interface';
+import {IVideoGameDetail} from './videoGameDetail/videoGameDetail.interface';
 
 export interface IAppState {
   readonly videoGameListing: IVideoGameListing;

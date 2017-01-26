@@ -1,6 +1,5 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {EffectsModule} from '@ngrx/effects';
 
 import {
   VideoGamesContainerComponent,
@@ -11,13 +10,9 @@ import {
 
 import {VideoGamesService} from './services';
 
-import {VideoGameListingStore} from './store/videoGameListing.store';
-import {VideoGamesEffects} from './store/videoGames.effects';
-
 @NgModule({
   imports: [
-    CommonModule,
-    EffectsModule.run(VideoGamesEffects)
+    CommonModule
   ],
   declarations: [
     VideoGamesContainerComponent,
@@ -26,8 +21,7 @@ import {VideoGamesEffects} from './store/videoGames.effects';
     VideoGamesSearchComponent
   ],
   providers: [
-    VideoGamesService,
-    VideoGameListingStore
+    VideoGamesService
   ]
 })
 export class VideoGamesModule {

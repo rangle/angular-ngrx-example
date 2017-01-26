@@ -2,9 +2,9 @@ import {Injectable} from '@angular/core';
 import {Store} from '@ngrx/store';
 import {Observable} from 'rxjs';
 
-import {IVideoGameListing} from '../../interfaces/videoGameListing.interface';
+import {IVideoGameListing} from '../../interfaces/videoGameListing/videoGameListing.interface';
 import {IAppState} from '../../interfaces/appState.interface';
-import {createAction} from '../../store/createAction';
+import {createAction} from '../createAction';
 
 @Injectable()
 export class VideoGameListingStore {

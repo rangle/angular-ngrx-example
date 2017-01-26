@@ -1,10 +1,10 @@
 import {Action} from '@ngrx/store';
 
 import {VideoGameListingStore} from './videoGameListing.store';
-import {IVideoGameListing} from '../../interfaces/videoGameListing.interface';
+import {IVideoGameListing} from '../../interfaces/videoGameListing/videoGameListing.interface';
 
 export default function videoGameListingReducer(
-  state: IVideoGameListing = { isLoading: false, loadingError: null },
+  state: IVideoGameListing,
   action: Action
 ): IVideoGameListing {
   switch (action.type) {
