@@ -1,10 +1,13 @@
 import {Action} from '@ngrx/store';
 
 import {VideoGameListingStore} from './videoGameListing.store';
-import {IVideoGameListing} from '../../interfaces/videoGameListing/videoGameListing.interface';
+import {
+  IVideoGameListing,
+  createDefaultVideoGameListing
+} from '../../interfaces/videoGameListing/videoGameListing.interface';
 
 export default function videoGameListingReducer(
-  state: IVideoGameListing,
+  state: IVideoGameListing = createDefaultVideoGameListing(),
   action: Action
 ): IVideoGameListing {
   switch (action.type) {
@@ -26,6 +29,12 @@ export default function videoGameListingReducer(
     case VideoGameListingStore.SEARCH:
       return Object.assign({}, state, {
         searchQuery: action.payload.query
+      });
+    case VideoGameListingStore.FILTER_PLATFORM:
+      return Object.assign({}, state, {
+        filters: Object.assign({}, state.filters, {
+          platform: action.payload.platform
+        })
       });
     default:
       return state;

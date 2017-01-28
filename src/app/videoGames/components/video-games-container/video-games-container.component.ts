@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 
 import {VideoGameListingStore} from '../../../store/videoGameListing/videoGameListing.store';
+import {PlatformsStore} from '../../../store/platforms/platforms.store';
 
 @Component({
   selector: 'video-games-container',
@@ -9,7 +10,11 @@ import {VideoGameListingStore} from '../../../store/videoGameListing/videoGameLi
 })
 export class VideoGamesContainerComponent {
 
-  constructor(private videoGameListingStore: VideoGameListingStore) {
+  constructor(
+    private platformsStore: PlatformsStore,
+    private videoGameListingStore: VideoGameListingStore
+  ) {
+    this.platformsStore.retrieve();
     this.videoGameListingStore.retrieve();
   }
 

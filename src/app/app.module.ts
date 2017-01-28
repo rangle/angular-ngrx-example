@@ -15,11 +15,8 @@ import {rootReducer} from './store/rootReducer';
 
 import {AppComponent} from './components';
 
-import {
-  VideoGameDetailStore,
-  VideoGameListingStore
-} from './store/services';
-import {VideoGameListingEffects} from './store/effects';
+import {PlatformsStore, VideoGameListingStore} from './store/stores';
+import {PlatformsEffects, VideoGameListingEffects} from './store/effects';
 
 @NgModule({
   imports: [
@@ -30,6 +27,7 @@ import {VideoGameListingEffects} from './store/effects';
     StoreModule.provideStore(rootReducer),
     RouterStoreModule.connectRouter(),
     StoreDevtoolsModule.instrumentOnlyWithExtension(),
+    EffectsModule.run(PlatformsEffects),
     EffectsModule.run(VideoGameListingEffects),
     VideoGamesModule
   ],
@@ -37,7 +35,7 @@ import {VideoGameListingEffects} from './store/effects';
     AppComponent
   ],
   providers: [
-    VideoGameDetailStore,
+    PlatformsStore,
     VideoGameListingStore
   ],
   bootstrap: [AppComponent]

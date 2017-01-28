@@ -12,8 +12,4 @@ export class VideoGameDetailComponent {
   @Input()
   videoGame: IVideoGame;
 
-  ngOnInit() {
-    console.log(this.videoGame);
-  }
-
 }

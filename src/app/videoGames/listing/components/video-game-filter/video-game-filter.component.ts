@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'video-game-filter',
@@ -7,6 +7,10 @@ import {Component} from '@angular/core';
 })
 export class VideoGameFilterComponent {
 
+  @Input()
+  private platforms: Array<string>;
 
+  @Output()
+  private filterChanged = new EventEmitter<string>();
 
 }

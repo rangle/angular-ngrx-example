@@ -6,7 +6,7 @@ import {
   VideoGamesContainerComponent
 } from './components';
 
-import {VideoGamesService} from './services';
+import {PlatformsService, VideoGamesService} from './services';
 import {VideoGameListingModule} from './listing/listing.module';
 import {VideoGameDetailModule} from './detail/detail.module';
 
@@ -21,6 +21,7 @@ import {VideoGameDetailModule} from './detail/detail.module';
     VideoGamesContainerComponent
   ],
   providers: [
+    PlatformsService,
     VideoGamesService
   ]
 })
