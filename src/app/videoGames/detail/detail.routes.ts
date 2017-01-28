@@ -1,11 +1,11 @@
 import {Routes} from '@angular/router';
 
-import {VideoGameDetailComponent} from './components';
+import {VideoGameDetailPageComponent} from './components';
 
 export const detailRoutes: Routes = [
   {
-    path: 'detail',
-    component: VideoGameDetailComponent
+    path: ':videoGameId',
+    component: VideoGameDetailPageComponent
   }
 ];
 

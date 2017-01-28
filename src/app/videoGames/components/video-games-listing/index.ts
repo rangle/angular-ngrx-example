@@ -1,1 +1,0 @@
-export * from './video-games-listing.component';

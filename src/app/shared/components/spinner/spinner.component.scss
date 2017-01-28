@@ -1,0 +1,33 @@
+:host {
+  margin: 100px auto;
+  text-align: center;
+  width: 70px;
+
+  @keyframes bounceDelay {
+    0%,
+    80%,
+    100% {
+      transform: scale(0);
+    }
+    40% {
+      transform: scale(1);
+    }
+  }
+
+  > div {
+    background-color: #333;
+    border-radius: 100%;
+    display: inline-block;
+    height: 18px;
+    width: 18px;
+    animation: bounceDelay 1.4s infinite ease-in-out both;
+  }
+
+  > .bounce1 {
+    animation-delay: -0.32s;
+  }
+
+  > .bounce2 {
+    animation-delay: -0.16s;
+  }
+}

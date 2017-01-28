@@ -9,13 +9,16 @@ import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {RouterStoreModule} from '@ngrx/router-store';
 
 import {VideoGamesModule} from './videoGames/videoGames.module';
-import {VideoGamesDetailModule} from './videoGames/detail/detail.module';
 
-import {AppComponent} from './app.component';
 import {rootRoutes} from './app.routes';
 import {rootReducer} from './store/rootReducer';
 
-import {VideoGameListingStore} from './store/videoGameListing/videoGameListing.store';
+import {AppComponent} from './components';
+
+import {
+  VideoGameDetailStore,
+  VideoGameListingStore
+} from './store/services';
 import {VideoGameListingEffects} from './store/effects';
 
 @NgModule({
@@ -28,13 +31,13 @@ import {VideoGameListingEffects} from './store/effects';
     RouterStoreModule.connectRouter(),
     StoreDevtoolsModule.instrumentOnlyWithExtension(),
     EffectsModule.run(VideoGameListingEffects),
-    VideoGamesModule,
-    VideoGamesDetailModule
+    VideoGamesModule
   ],
   declarations: [
     AppComponent
   ],
   providers: [
+    VideoGameDetailStore,
     VideoGameListingStore
   ],
   bootstrap: [AppComponent]

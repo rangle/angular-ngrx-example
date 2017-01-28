@@ -1,0 +1,6 @@
+<ul>
+  <li *ngFor="let videoGame of videoGames"
+      [routerLink]="['/videoGames', videoGame.id]">
+    {{videoGame.title}}
+  </li>
+</ul>

@@ -1,0 +1,8 @@
+<loading-container [loadable]="videoGameListing$ | async">
+  <video-game-search></video-game-search>
+
+  <video-game-filter></video-game-filter>
+
+  <video-game-listing [videoGames]="(videoGameListing$ | async).videoGames">
+  </video-game-listing>
+</loading-container>

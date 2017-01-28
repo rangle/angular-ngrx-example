@@ -1,7 +1,5 @@
 import {Component} from '@angular/core';
-import {Observable} from 'rxjs';
 
-import {IVideoGameListing} from '../../../interfaces/videoGameListing/videoGameListing.interface';
 import {VideoGameListingStore} from '../../../store/videoGameListing/videoGameListing.store';
 
 @Component({
@@ -11,10 +9,7 @@ import {VideoGameListingStore} from '../../../store/videoGameListing/videoGameLi
 })
 export class VideoGamesContainerComponent {
 
-  videoGameListing$: Observable<IVideoGameListing>;
-
   constructor(private videoGameListingStore: VideoGameListingStore) {
-    this.videoGameListing$ = videoGameListingStore.getVideoGameListing();
     this.videoGameListingStore.retrieve();
   }
 

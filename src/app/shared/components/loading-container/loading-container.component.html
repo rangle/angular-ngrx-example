@@ -1,0 +1,11 @@
+<spinner *ngIf="isLoading">
+</spinner>
+
+<h1 *ngIf="isError">Whoops, something went wrong!</h1>
+<p *ngIf="isError">
+  {{loadable.loadingError}}
+</p>
+
+<div *ngIf="isOkay">
+  <ng-content></ng-content>
+</div>
