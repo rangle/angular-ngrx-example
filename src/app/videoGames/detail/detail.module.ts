@@ -6,7 +6,8 @@ import {SharedComponentsModule} from '../../shared/components/sharedComponents.m
 
 import {
   VideoGameDetailComponent,
-  VideoGameDetailPageComponent
+  VideoGameDetailPageComponent,
+  YouTubeVideoComponent
 } from './components';
 
 @NgModule({
@@ -17,7 +18,8 @@ import {
   ],
   declarations: [
     VideoGameDetailComponent,
-    VideoGameDetailPageComponent
+    VideoGameDetailPageComponent,
+    YouTubeVideoComponent
   ],
   providers: []
 })

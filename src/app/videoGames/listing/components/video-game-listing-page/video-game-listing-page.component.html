@@ -1,8 +1,7 @@
-<loading-container [loadable]="videoGameListing$ | async">
-  <video-game-search></video-game-search>
-
+<loading-container [loadable]="videoGames$ | async">
+  <video-game-search (queryChanged)="search($event)"></video-game-search>
   <video-game-filter></video-game-filter>
 
-  <video-game-listing [videoGames]="(videoGameListing$ | async).videoGames">
+  <video-game-listing [videoGames]="videoGames$ | async">
   </video-game-listing>
 </loading-container>

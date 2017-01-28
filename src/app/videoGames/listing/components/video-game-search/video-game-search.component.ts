@@ -1,4 +1,5 @@
-import {Component} from '@angular/core';
+import {Component, Output, EventEmitter} from '@angular/core';
+import {Subject} from 'rxjs';
 
 @Component({
   selector: 'video-game-search',
@@ -7,6 +8,20 @@ import {Component} from '@angular/core';
 })
 export class VideoGameSearchComponent {
 
+  @Output()
+  private queryChanged = new EventEmitter<string>();
 
+  private query$: Subject<string> = new Subject<string>();
+
+  constructor() {
+    this.query$
+      .debounceTime(300)
+      .distinctUntilChanged()
+      .subscribe(query => this.queryChanged.emit(query));
+  }
+
+  onChange(query: string) {
+    this.query$.next(query);
+  }
 
 }

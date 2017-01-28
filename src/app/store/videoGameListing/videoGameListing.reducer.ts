@@ -23,6 +23,10 @@ export default function videoGameListingReducer(
         isLoading: false,
         loadingError: action.payload.error
       });
+    case VideoGameListingStore.SEARCH:
+      return Object.assign({}, state, {
+        searchQuery: action.payload.query
+      });
     default:
       return state;
   }

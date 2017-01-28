@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {Observable} from 'rxjs';
 
 import {VideoGameListingStore} from '../../../../store/videoGameListing/videoGameListing.store';
-import {IVideoGameListing} from '../../../../interfaces/videoGameListing/videoGameListing.interface';
+import {IVideoGame} from '../../../../interfaces/videoGame/videoGame.interface';
 
 @Component({
   selector: 'video-game-listing-page',
@@ -11,10 +11,14 @@ import {IVideoGameListing} from '../../../../interfaces/videoGameListing/videoGa
 })
 export class VideoGameListingPageComponent {
 
-  videoGameListing$: Observable<IVideoGameListing>;
+  private videoGames$: Observable<Array<IVideoGame>>;
 
   constructor(private videoGameListingStore: VideoGameListingStore) {
-    this.videoGameListing$ = videoGameListingStore.getVideoGameListing();
+    this.videoGames$ = videoGameListingStore.getVideoGames();
+  }
+
+  search(query: string) {
+    this.videoGameListingStore.search(query);
   }
 
 }
