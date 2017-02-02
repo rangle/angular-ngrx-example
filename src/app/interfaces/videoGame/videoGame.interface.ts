@@ -24,15 +24,19 @@ function textMatchesSearchQuery(text: string, searchQuery: string) {
     false;
 }
 
-export function videoGameMatchesSearchQuery(videoGame, searchQuery: string) {
+export function videoGameMatchesSearchQuery(videoGame: IVideoGame, searchQuery: string) {
+  if (!Boolean(videoGame)) {
+    return false;
+  }
+
   return Boolean(searchQuery) ?
     textMatchesSearchQuery(videoGame.title, searchQuery) ||
     textMatchesSearchQuery(videoGame.description, searchQuery) :
     true;
 }
 
-export function videoGameMatchesFilters(videoGame, filters: IVideoGameFilters) {
-  return Boolean(filters.platform) ?
+export function videoGameMatchesFilters(videoGame: IVideoGame, filters: IVideoGameFilters) {
+  return Boolean(filters) && Boolean(filters.platform) ?
     videoGame.platform === filters.platform :
     true;
 }

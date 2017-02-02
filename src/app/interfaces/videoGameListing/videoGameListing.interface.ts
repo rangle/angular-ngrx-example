@@ -37,5 +37,7 @@ export function getVideoGames(videoGameListing: IVideoGameListing) {
 }
 
 export function getVideoGame(videoGameListing: IVideoGameListing, id: string) {
-  return videoGameListing.videoGames.find(videoGame => videoGame.id === id);
+  return Boolean(videoGameListing) ?
+    videoGameListing.videoGames.find(videoGame => videoGame.id === id) :
+    null;
 }
