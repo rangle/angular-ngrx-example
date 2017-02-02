@@ -8,18 +8,26 @@ export interface IVideoGame {
   youtubeUrl: string;
 }
 
-function videoGameTitleMatches(videoGame: IVideoGame, searchQuery: string) {
-  return videoGame.title.toLowerCase().includes(searchQuery.toLowerCase());
+export function createVideoGame(
+  id: string,
+  title: string,
+  platform?: string,
+  description?: string,
+  youtubeUrl?: string
+) {
+  return {id, title, platform, description, youtubeUrl};
 }
 
-function videoGameDescriptionMatches(videoGame, searchQuery: string) {
-  return videoGame.description.toLowerCase().includes(searchQuery.toLowerCase());
+function textMatchesSearchQuery(text: string, searchQuery: string) {
+  return text ?
+    text.toLowerCase().includes(searchQuery.toLowerCase()) :
+    false;
 }
 
 export function videoGameMatchesSearchQuery(videoGame, searchQuery: string) {
   return Boolean(searchQuery) ?
-    videoGameTitleMatches(videoGame, searchQuery) ||
-      videoGameDescriptionMatches(videoGame, searchQuery) :
+    textMatchesSearchQuery(videoGame.title, searchQuery) ||
+    textMatchesSearchQuery(videoGame.description, searchQuery) :
     true;
 }
 
