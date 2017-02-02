@@ -2,26 +2,26 @@ import {Input, Component, OnChanges} from '@angular/core';
 import {DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
 
 @Component({
-  selector: 'youtube-video',
+  selector: 'app-youtube-video',
   templateUrl: './youtube-video.component.html',
   styleUrls: ['./youtube-video.component.scss']
 })
 export class YouTubeVideoComponent implements OnChanges {
 
   @Input()
-  url: string;
+  private url: string;
 
-  trustedUrl: SafeResourceUrl;
+  public trustedUrl: SafeResourceUrl;
 
   constructor(private sanitizer: DomSanitizer) {
 
   }
 
-  ngOnChanges() {
+  public ngOnChanges() {
     this.trustedUrl = this.getTrustedUrl();
   }
 
-  private getTrustedUrl() {
+  public getTrustedUrl() {
     return this.sanitizer.bypassSecurityTrustResourceUrl(this.url);
   }
 

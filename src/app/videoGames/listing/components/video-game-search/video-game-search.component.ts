@@ -1,8 +1,10 @@
 import {Component, Output, EventEmitter} from '@angular/core';
-import {Subject} from 'rxjs';
+import {Subject} from 'rxjs/Subject';
+import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/operator/distinctUntilChanged';
 
 @Component({
-  selector: 'video-game-search',
+  selector: 'app-video-game-search',
   templateUrl: 'video-game-search.component.html',
   styleUrls: ['video-game-search.component.scss']
 })
@@ -20,7 +22,7 @@ export class VideoGameSearchComponent {
       .subscribe(query => this.queryChanged.emit(query));
   }
 
-  onChange(query: string) {
+  public onChange(query: string) {
     this.query$.next(query);
   }
 

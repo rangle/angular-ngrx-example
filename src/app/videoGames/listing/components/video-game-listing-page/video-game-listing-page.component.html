@@ -1,11 +1,11 @@
-<loading-container [loadable]="videoGames$ | async">
+<app-loading-container [loadable]="videoGames$ | async">
   <header>
-    <video-game-search (queryChanged)="search($event)"></video-game-search>
-    <video-game-filter [platforms]="(platforms$ | async).list"
-                       (filterChanged)="filterPlatform($event)">
-    </video-game-filter>
+    <app-video-game-search (queryChanged)="search($event)"></app-video-game-search>
+    <app-video-game-filter [platforms]="(platforms$ | async).list"
+                           (filterChanged)="filterPlatform($event)">
+    </app-video-game-filter>
   </header>
 
-  <video-game-listing [videoGames]="videoGames$ | async">
-  </video-game-listing>
-</loading-container>
+  <app-video-game-listing [videoGames]="videoGames$ | async">
+  </app-video-game-listing>
+</app-loading-container>

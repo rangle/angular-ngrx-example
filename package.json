@@ -5,9 +5,11 @@
   "angular-cli": {},
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "lint": "tslint \"src/**/*.ts\" --project src/tsconfig.json --type-check && tslint \"e2e/**/*.ts\" --project e2e/tsconfig.json --type-check",
-    "test": "ng test",
+    "start": "npm run lint && ng serve",
+    "lint": "npm run lint-ts && npm run lint-sass",
+    "lint-ts": "tslint \"src/**/*.ts\" --format stylish --project src/tsconfig.json --type-check",
+    "lint-sass": "sass-lint 'src/**/*.scss'",
+    "test": "npm run lint && ng test",
     "pree2e": "webdriver-manager update --standalone false --gecko false",
     "e2e": "protractor"
   },
@@ -38,7 +40,7 @@
     "@types/jasmine": "2.5.38",
     "@types/node": "^6.0.42",
     "angular-cli": "1.0.0-beta.25.5",
-    "codelyzer": "~2.0.0-beta.1",
+    "codelyzer": "^2.0.0-beta.1",
     "jasmine-core": "2.5.2",
     "jasmine-spec-reporter": "2.5.0",
     "karma": "1.2.0",
@@ -48,6 +50,7 @@
     "karma-remap-istanbul": "^0.2.1",
     "postcss-loader": "^1.2.2",
     "protractor": "~4.0.13",
+    "sass-lint": "^1.10.2",
     "ts-node": "1.2.1",
     "tslint": "^4.3.0",
     "typescript": "~2.0.3"

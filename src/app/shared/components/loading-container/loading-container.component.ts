@@ -3,20 +3,20 @@ import {Component, Input, OnChanges} from '@angular/core';
 import {ILoadable} from '../../../interfaces/loadable/loadable';
 
 @Component({
-  selector: 'loading-container',
+  selector: 'app-loading-container',
   templateUrl: 'loading-container.component.html',
   styleUrls: ['loading-container.component.scss']
 })
 export class LoadingContainerComponent implements OnChanges {
 
   @Input()
-  private loadable: ILoadable;
+  public loadable: ILoadable;
 
-  private isLoading; boolean;
-  private isError: boolean;
-  private isOkay: boolean;
+  public isLoading: boolean;
+  public isError: boolean;
+  public isOkay: boolean;
 
-  ngOnChanges() {
+  public ngOnChanges() {
     this.isLoading = this.loadable.isLoading;
     this.isError = Boolean(this.loadable.loadingError);
     this.isOkay = !this.isLoading && !this.isError;

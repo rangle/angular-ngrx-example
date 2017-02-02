@@ -4,7 +4,7 @@ import {VideoGameListingStore} from '../../../store/videoGameListing/videoGameLi
 import {PlatformsStore} from '../../../store/platforms/platforms.store';
 
 @Component({
-  selector: 'video-games-container',
+  selector: 'app-video-games-container',
   templateUrl: './video-games-container.component.html',
   styleUrls: ['./video-games-container.component.scss']
 })

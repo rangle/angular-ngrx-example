@@ -21,7 +21,7 @@ export function createDefaultVideoGameListing(): IVideoGameListing {
     filters: createDefaultVideoGameFilters(),
     searchQuery: null,
     videoGames: []
-  }
+  };
 }
 
 function getFilteredVideoGames(videoGameListing: IVideoGameListing) {
