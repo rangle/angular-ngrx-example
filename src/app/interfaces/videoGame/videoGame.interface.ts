@@ -36,6 +36,10 @@ export function videoGameMatchesSearchQuery(videoGame: IVideoGame, searchQuery: 
 }
 
 export function videoGameMatchesFilters(videoGame: IVideoGame, filters: IVideoGameFilters) {
+  if (!Boolean(videoGame)) {
+    return false;
+  }
+
   return Boolean(filters) && Boolean(filters.platform) ?
     videoGame.platform === filters.platform :
     true;

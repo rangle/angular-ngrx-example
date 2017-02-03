@@ -31,9 +31,11 @@ function getFilteredVideoGames(videoGameListing: IVideoGameListing) {
 }
 
 export function getVideoGames(videoGameListing: IVideoGameListing) {
-  return getFilteredVideoGames(videoGameListing).sort(
-    (videoGameA, videoGameB) => videoGameA.title.localeCompare(videoGameB.title)
-  );
+  return Boolean(videoGameListing) ?
+    getFilteredVideoGames(videoGameListing).sort(
+      (videoGameA, videoGameB) => videoGameA.title.localeCompare(videoGameB.title)
+    ) :
+    [];
 }
 
 export function getVideoGame(videoGameListing: IVideoGameListing, id: string) {

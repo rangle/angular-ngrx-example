@@ -41,13 +41,6 @@ describe('with Super Mario Odyssey', () => {
     });
   });
 
-  describe('videoGameMatchesSearchQuery(falsy, "Super")', () => {
-    it('returns false', () => {
-      const isMatched = videoGameMatchesSearchQuery(null, 'Super');
-      expect(isMatched).toEqual(false);
-    });
-  });
-
   describe('videoGameMatchesFilters(superMarioOdyssey, nintendoSwitch)', () => {
     it('returns true', () => {
       const nintendoSwitch: IVideoGameFilters = {
@@ -85,6 +78,26 @@ describe('with Super Mario Odyssey', () => {
     it('returns true', () => {
       const isMatched = videoGameMatchesFilters(superMarioOdyssey, null);
       expect(isMatched).toEqual(true);
+    });
+  });
+});
+
+describe('when the game is falsy', () => {
+  describe('videoGameMatchesSearchQuery(falsy, "Super")', () => {
+    it('returns false', () => {
+      const isMatched = videoGameMatchesSearchQuery(null, 'Super');
+      expect(isMatched).toEqual(false);
+    });
+  });
+
+  describe('videoGameMatchesFilters(falsy, "Nintendo Switch")', () => {
+    const nintendoSwitch: IVideoGameFilters = {
+      platform: 'Nintendo Switch'
+    };
+
+    it('returns false', () => {
+      const isMatched = videoGameMatchesFilters(null, nintendoSwitch);
+      expect(isMatched).toEqual(false);
     });
   });
 });

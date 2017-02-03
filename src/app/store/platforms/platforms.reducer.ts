@@ -6,10 +6,9 @@ import {
 } from '../../interfaces/platforms/platforms.interface';
 import {PlatformsStore} from './platforms.store';
 
-export default function platformsReducer(
-  state: IPlatforms = createDefaultPlatforms(),
-  action: Action
-): IPlatforms {
+export default function platformsReducer(state: IPlatforms, action: Action): IPlatforms {
+  state = state || createDefaultPlatforms();
+
   switch (action.type) {
     case PlatformsStore.RETRIEVE:
       return Object.assign({}, state, {

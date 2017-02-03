@@ -5,7 +5,7 @@ import {
 } from './videoGameListing.interface';
 import {createVideoGame} from '../videoGame/videoGame.interface';
 
-describe('a list of 3 unsorted video games', () => {
+describe('when there is a list of 3 unsorted video games', () => {
   const unsortedVideoGameListing: IVideoGameListing =
     Object.assign({}, createDefaultVideoGameListing(), {
       videoGames: [
@@ -42,16 +42,9 @@ describe('a list of 3 unsorted video games', () => {
       expect(videoGame).toBeFalsy();
     });
   });
-
-  describe('getVideoGame(falsy, "1")', () => {
-    it('returns falsy', () => {
-      const videoGame = getVideoGame(null, '1');
-      expect(videoGame).toBeFalsy();
-    });
-  });
 });
 
-describe('a list of games from different platforms', () => {
+describe('when there is a list of games from different platforms', () => {
   const videoGameListing: IVideoGameListing =
     Object.assign({}, createDefaultVideoGameListing(), {
       videoGames: [
@@ -70,7 +63,7 @@ describe('a list of games from different platforms', () => {
   });
 });
 
-describe('a list of games from different platforms', () => {
+describe('when there is a list of games from different platforms', () => {
   const videoGameListing: IVideoGameListing =
     Object.assign({}, createDefaultVideoGameListing(), {
       videoGames: [
@@ -89,7 +82,7 @@ describe('a list of games from different platforms', () => {
   });
 });
 
-describe('a list of games with a search query', () => {
+describe('when there is a list of games with a search query', () => {
   const videoGameListing: IVideoGameListing =
     Object.assign({}, createDefaultVideoGameListing(), {
       videoGames: [
@@ -103,5 +96,21 @@ describe('a list of games with a search query', () => {
     const videoGames = getVideoGames(videoGameListing);
     expect(videoGames.length).toEqual(1);
     expect(videoGames[0].id).toEqual('1');
+  });
+});
+
+describe('when the list is falsy', () => {
+  describe('getVideoGame(falsy, "1")', () => {
+    it('returns falsy', () => {
+      const videoGame = getVideoGame(null, '1');
+      expect(videoGame).toBeFalsy();
+    });
+  });
+
+  describe('getVideoGames(falsy)', () => {
+    it('returns an empty list', () => {
+      const videoGame = getVideoGames(null);
+      expect(videoGame).toEqual([]);
+    });
   });
 });

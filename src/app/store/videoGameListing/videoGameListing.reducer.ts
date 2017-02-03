@@ -7,9 +7,11 @@ import {
 } from '../../interfaces/videoGameListing/videoGameListing.interface';
 
 export default function videoGameListingReducer(
-  state: IVideoGameListing = createDefaultVideoGameListing(),
+  state: IVideoGameListing,
   action: Action
 ): IVideoGameListing {
+  state = state || createDefaultVideoGameListing();
+
   switch (action.type) {
     case VideoGameListingStore.RETRIEVE:
       return Object.assign({}, state, {
