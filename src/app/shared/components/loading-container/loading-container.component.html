@@ -1,11 +1,14 @@
 <app-spinner *ngIf="isLoading">
 </app-spinner>
 
-<h1 *ngIf="isError">Whoops, something went wrong!</h1>
-<p *ngIf="isError">
-  {{loadable.loadingError}}
-</p>
+<ng-container *ngIf="isError">
+  <h1>Whoops, something went wrong!</h1>
+  <p>
+    {{loadable.loadingError}}
+  </p>
+</ng-container>
 
-<div *ngIf="isOkay">
+<div *ngIf="isOkay"
+     class="okay">
   <ng-content></ng-content>
 </div>

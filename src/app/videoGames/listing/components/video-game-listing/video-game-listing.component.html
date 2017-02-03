@@ -1,6 +1,11 @@
-<ul>
+<ul *ngIf="videoGames.length > 0">
   <li *ngFor="let videoGame of videoGames"
       [routerLink]="['/videoGames', videoGame.id]">
-    {{videoGame.title}}
+    <app-video-game-list-item [videoGame]="videoGame">
+    </app-video-game-list-item>
   </li>
 </ul>
+
+<p *ngIf="videoGames.length === 0">
+  There are no games that match your criteria.
+</p>

@@ -1,0 +1,22 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  header {
+    background-color: #20252F;
+    color: #79818C;
+    flex-shrink: 0;
+    padding: 0 2rem;
+
+    h1 {
+      cursor: pointer;
+    }
+  }
+
+  section {
+    color: #A7ACB3;
+    display: flex;
+    flex-grow: 1;
+  }
+}

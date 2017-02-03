@@ -1,0 +1,31 @@
+:host {
+  background-color: #EEF0F1;
+  display: flex;
+  flex-grow: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  p, ul {
+    flex-grow: 1;
+    margin: 0;
+    padding: 1rem;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style: none;
+
+    li {
+      color: #303A4A;
+      cursor: pointer;
+      background-color: #FFFFFF;
+      margin: 1rem;
+
+      &:hover {
+        box-shadow: 1px 1px 6px 2px #DDDFE0;
+      }
+    }
+  }
+}

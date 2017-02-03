@@ -1,11 +1,12 @@
 import {IVideoGameFilters} from '../videoGameListing/videoGameFilters.interface';
 
 export interface IVideoGame {
-  id: string;
-  title: string;
-  platform: string;
-  description: string;
-  youtubeUrl: string;
+  readonly id: string;
+  readonly title: string;
+  readonly platform?: string;
+  readonly description?: string;
+  readonly youtubeUrl?: string;
+  readonly imageUrl?: string;
 }
 
 export function createVideoGame(
@@ -13,9 +14,10 @@ export function createVideoGame(
   title: string,
   platform?: string,
   description?: string,
-  youtubeUrl?: string
+  youtubeUrl?: string,
+  imageUrl?: string,
 ) {
-  return {id, title, platform, description, youtubeUrl};
+  return {id, title, platform, description, youtubeUrl, imageUrl};
 }
 
 function textMatchesSearchQuery(text: string, searchQuery: string) {

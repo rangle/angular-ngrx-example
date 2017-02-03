@@ -1,32 +1,29 @@
-/* tslint:disable:no-unused-variable */
-
 import {APP_BASE_HREF} from '@angular/common';
-import {TestBed, async} from '@angular/core/testing';
+import {async} from '@angular/core/testing';
 import {RouterModule} from '@angular/router';
 
+import {configureTestModule} from '../../test/configureTestModule';
 import {AppComponent} from './app.component';
-
+import {TestComponentSupport} from '../../test/testComponentSupport';
 
 describe('AppComponent', () => {
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      imports: [
-        RouterModule.forRoot([])
-      ],
-      providers: [
-        { provide: APP_BASE_HREF, useValue : '/' }
-      ],
-      declarations: [
-        AppComponent
-      ],
-    });
-    TestBed.compileComponents();
-  });
+  let support;
+
+  beforeEach(configureTestModule({
+    imports: [
+      RouterModule.forRoot([])
+    ],
+    providers: [
+      { provide: APP_BASE_HREF, useValue : '/' }
+    ],
+    declarations: [
+      AppComponent
+    ],
+  }));
 
   it('should create the app', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
+    support = new TestComponentSupport<AppComponent>(AppComponent);
+    expect(support.component).toBeTruthy();
   }));
 
 });

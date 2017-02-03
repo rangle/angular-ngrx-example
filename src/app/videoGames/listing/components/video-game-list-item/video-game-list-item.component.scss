@@ -1,0 +1,26 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  width: 24rem;
+
+  img {
+    height: 15rem;
+    width: auto;
+  }
+
+  .details {
+    padding: 1rem;
+
+    h3 {
+      margin-top: 0;
+    }
+
+    p {
+      color: #A7ACB3;
+    }
+
+    .platform {
+      color: #A7ACB3;
+    }
+  }
+}

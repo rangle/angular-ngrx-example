@@ -4,4 +4,11 @@
   flex-direction: column;
   flex-grow: 1;
   height: 100%;
+
+  app-spinner,
+  .okay {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
 }

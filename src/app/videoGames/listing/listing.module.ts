@@ -8,6 +8,7 @@ import {
   VideoGameFilterComponent,
   VideoGameListingComponent,
   VideoGameListingPageComponent,
+  VideoGameListItemComponent,
   VideoGameSearchComponent
 } from './components';
 
@@ -21,6 +22,7 @@ import {
     VideoGameFilterComponent,
     VideoGameListingComponent,
     VideoGameListingPageComponent,
+    VideoGameListItemComponent,
     VideoGameSearchComponent
   ],
   providers: []
