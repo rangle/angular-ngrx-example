@@ -2,11 +2,11 @@ import {APP_BASE_HREF} from '@angular/common';
 import {async} from '@angular/core/testing';
 import {RouterModule} from '@angular/router';
 
-import {configureTestModule} from '../../test/configureTestModule';
-import {AppComponent} from './app.component';
-import {TestComponentSupport} from '../../test/testComponentSupport';
+import {configureTestModule} from '../../../test/configureTestModule';
+import {RootComponent} from './root.component';
+import {TestComponentSupport} from '../../../test/testComponentSupport';
 
-describe('AppComponent', () => {
+describe('RootComponent', () => {
   let support;
 
   beforeEach(configureTestModule({
@@ -17,12 +17,12 @@ describe('AppComponent', () => {
       { provide: APP_BASE_HREF, useValue : '/' }
     ],
     declarations: [
-      AppComponent
+      RootComponent
     ],
   }));
 
   it('should create the app', async(() => {
-    support = new TestComponentSupport<AppComponent>(AppComponent);
+    support = new TestComponentSupport<RootComponent>(RootComponent);
     expect(support.component).toBeTruthy();
   }));
 

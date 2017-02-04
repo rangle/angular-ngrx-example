@@ -8,15 +8,15 @@ import {EffectsModule} from '@ngrx/effects';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {RouterStoreModule} from '@ngrx/router-store';
 
-import {VideoGamesModule} from './videoGames/videoGames.module';
+import {VideoGamesModule} from '../videoGames/videoGames.module';
 
-import {rootRoutes} from './app.routes';
-import {rootReducer} from './store/rootReducer';
+import {rootRoutes} from './root.routes';
+import {rootReducer} from '../store/rootReducer';
 
-import {AppComponent} from './components';
+import {RootComponent} from './components';
 
-import {PlatformsStore, VideoGameListingStore} from './store/stores';
-import {PlatformsEffects, VideoGameListingEffects} from './store/effects';
+import {PlatformsStore, VideoGameListingStore} from '../store/stores';
+import {PlatformsEffects, VideoGameListingEffects} from '../store/effects';
 
 @NgModule({
   imports: [
@@ -32,13 +32,13 @@ import {PlatformsEffects, VideoGameListingEffects} from './store/effects';
     VideoGamesModule
   ],
   declarations: [
-    AppComponent
+    RootComponent
   ],
   providers: [
     PlatformsStore,
     VideoGameListingStore
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [RootComponent]
 })
-export class AppModule {
+export class RootModule {
 }
