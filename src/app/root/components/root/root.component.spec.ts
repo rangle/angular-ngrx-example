@@ -2,9 +2,9 @@ import {APP_BASE_HREF} from '@angular/common';
 import {async} from '@angular/core/testing';
 import {RouterModule} from '@angular/router';
 
-import {configureTestModule} from '../../../test/configureTestModule';
+import {configureTestModule} from '../../../test/configure-test-module.function';
 import {RootComponent} from './root.component';
-import {TestComponentSupport} from '../../../test/testComponentSupport';
+import {TestComponentSupport} from '../../../test/test-component-support.class';
 
 describe('RootComponent', () => {
   let support;

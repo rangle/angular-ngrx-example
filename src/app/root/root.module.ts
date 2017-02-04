@@ -8,10 +8,10 @@ import {EffectsModule} from '@ngrx/effects';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {RouterStoreModule} from '@ngrx/router-store';
 
-import {VideoGamesModule} from '../videoGames/videoGames.module';
+import {VideoGamesModule} from '../video-games/video-games.module';
 
 import {rootRoutes} from './root.routes';
-import {rootReducer} from '../store/rootReducer';
+import {rootReducer} from '../store/root-reducer';
 
 import {RootComponent} from './components';
 

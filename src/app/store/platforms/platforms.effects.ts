@@ -2,8 +2,8 @@ import {Injectable} from '@angular/core';
 import {Effect, Actions} from '@ngrx/effects';
 import {Observable} from 'rxjs/Observable';
 
-import {createAction} from '../createAction';
-import {PlatformsService} from '../../videoGames/services/platforms.service';
+import {createAction} from '../create-action';
+import {PlatformsService} from '../../video-games/services/platforms.service';
 import {PlatformsStore} from './platforms.store';
 
 @Injectable()

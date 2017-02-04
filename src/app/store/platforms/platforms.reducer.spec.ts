@@ -1,6 +1,6 @@
 import platformsReducer from './platforms.reducer';
 import {PlatformsStore} from './platforms.store';
-import {createAction} from '../createAction';
+import {createAction} from '../create-action';
 import {createDefaultPlatforms} from '../../interfaces/platforms/platforms.interface';
 
 describe('platformsReducer(falsy, unknownAction)', () => {
