@@ -17,6 +17,7 @@ import {RootComponent} from './components';
 
 import {PlatformsStore, VideoGameListingStore} from '../store/stores';
 import {PlatformsEffects, VideoGameListingEffects} from '../store/effects';
+import {ApiService} from './services';
 
 @NgModule({
   imports: [
@@ -35,6 +36,7 @@ import {PlatformsEffects, VideoGameListingEffects} from '../store/effects';
     RootComponent
   ],
   providers: [
+    ApiService,
     PlatformsStore,
     VideoGameListingStore
   ],
