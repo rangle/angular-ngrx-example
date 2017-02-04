@@ -1,0 +1,11 @@
+machine:
+  node:
+    version: 6.0.0
+test:
+  pre:
+    - npm run lint
+deployment:
+  staging:
+    branch: master
+    heroku:
+      appname: angular2-ngrx-example
