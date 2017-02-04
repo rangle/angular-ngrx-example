@@ -1,5 +1,4 @@
-import {IVideoGameListing} from './video-game-listing/video-game-listing.interface';
-import {IPlatforms} from './platforms/platforms.interface';
+import {IPlatforms, IVideoGameListing} from '../video-games/interfaces';
 
 export interface IAppState {
   readonly platforms: IPlatforms;

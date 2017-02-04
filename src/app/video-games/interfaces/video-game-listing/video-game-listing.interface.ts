@@ -1,4 +1,4 @@
-import {ILoadable} from '../loadable/loadable';
+import {ILoadable} from '../../../interfaces/loadable';
 import {
   IVideoGame, videoGameMatchesSearchQuery,
   videoGameMatchesFilters

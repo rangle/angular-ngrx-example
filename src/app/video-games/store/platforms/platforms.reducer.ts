@@ -6,7 +6,7 @@ import {
 } from '../../interfaces/platforms/platforms.interface';
 import {PlatformsStore} from './platforms.store';
 
-export default function platformsReducer(state: IPlatforms, action: Action): IPlatforms {
+export function platformsReducer(state: IPlatforms, action: Action): IPlatforms {
   state = state || createDefaultPlatforms();
 
   switch (action.type) {

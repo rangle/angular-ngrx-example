@@ -3,14 +3,14 @@ import {Store} from '@ngrx/store';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
-import {createAction} from '../create-action';
-import {IAppState} from '../../interfaces/app-state.interface';
 import {
   IVideoGameListing,
   getVideoGames,
   getVideoGame
 } from '../../interfaces/video-game-listing/video-game-listing.interface';
 import {IVideoGame} from '../../interfaces/video-game/video-game.interface';
+import {IAppState} from '../../../interfaces/app-state.interface';
+import {createAction} from '../../../store/create-action';
 
 @Injectable()
 export class VideoGameListingStore {

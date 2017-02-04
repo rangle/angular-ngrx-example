@@ -2,9 +2,9 @@ import {Injectable} from '@angular/core';
 import {Store} from '@ngrx/store';
 import {Observable} from 'rxjs/Observable';
 
-import {createAction} from '../create-action';
-import {IAppState} from '../../interfaces/app-state.interface';
 import {IPlatforms} from '../../interfaces/platforms/platforms.interface';
+import {IAppState} from '../../../interfaces/app-state.interface';
+import {createAction} from '../../../store/create-action';
 
 @Injectable()
 export class PlatformsStore {

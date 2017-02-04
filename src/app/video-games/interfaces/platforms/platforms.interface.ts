@@ -1,4 +1,4 @@
-import {ILoadable} from '../loadable/loadable';
+import {ILoadable} from '../../../interfaces/loadable';
 
 export interface IPlatforms extends ILoadable {
   readonly list: Array<string>;

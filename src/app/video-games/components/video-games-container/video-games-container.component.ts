@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 
-import {VideoGameListingStore} from '../../../store/video-game-listing/video-game-listing.store';
-import {PlatformsStore} from '../../../store/platforms/platforms.store';
+import {PlatformsStore} from '../../store/platforms/platforms.store';
+import {VideoGameListingStore} from '../../store/video-game-listing/video-game-listing.store';
 
 @Component({
   selector: 'app-video-games-container',

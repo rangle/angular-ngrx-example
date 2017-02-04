@@ -6,7 +6,7 @@ import {
   createDefaultVideoGameListing
 } from '../../interfaces/video-game-listing/video-game-listing.interface';
 
-export default function videoGameListingReducer(
+export function videoGameListingReducer(
   state: IVideoGameListing,
   action: Action
 ): IVideoGameListing {

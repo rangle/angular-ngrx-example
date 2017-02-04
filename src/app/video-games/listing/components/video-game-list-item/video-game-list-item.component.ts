@@ -1,6 +1,6 @@
 import {Input, Component} from '@angular/core';
 
-import {IVideoGame} from '../../../../interfaces/video-game/video-game.interface';
+import {IVideoGame} from '../../../interfaces/video-game/video-game.interface';
 
 @Component({
   selector: 'app-video-game-list-item',

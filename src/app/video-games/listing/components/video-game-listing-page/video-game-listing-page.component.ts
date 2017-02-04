@@ -1,10 +1,10 @@
 import {Component} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 
-import {VideoGameListingStore} from '../../../../store/video-game-listing/video-game-listing.store';
-import {IVideoGame} from '../../../../interfaces/video-game/video-game.interface';
-import {IPlatforms} from '../../../../interfaces/platforms/platforms.interface';
-import {PlatformsStore} from '../../../../store/platforms/platforms.store';
+import {IPlatforms} from '../../../interfaces/platforms/platforms.interface';
+import {IVideoGame} from '../../../interfaces/video-game/video-game.interface';
+import {PlatformsStore} from '../../../store/platforms/platforms.store';
+import {VideoGameListingStore} from '../../../store/video-game-listing/video-game-listing.store';
 
 @Component({
   selector: 'app-video-game-listing-page',

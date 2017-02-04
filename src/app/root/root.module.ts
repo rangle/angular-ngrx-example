@@ -4,7 +4,6 @@ import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {RouterModule} from '@angular/router';
 import {StoreModule} from '@ngrx/store';
-import {EffectsModule} from '@ngrx/effects';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {RouterStoreModule} from '@ngrx/router-store';
 
@@ -15,8 +14,7 @@ import {rootReducer} from '../store/root-reducer';
 
 import {RootComponent} from './components';
 
-import {PlatformsStore, VideoGameListingStore} from '../store/stores';
-import {PlatformsEffects, VideoGameListingEffects} from '../store/effects';
+import {PlatformsStore, VideoGameListingStore} from '../video-games/store/stores';
 import {ApiService} from './services';
 
 @NgModule({
@@ -28,8 +26,6 @@ import {ApiService} from './services';
     StoreModule.provideStore(rootReducer),
     RouterStoreModule.connectRouter(),
     StoreDevtoolsModule.instrumentOnlyWithExtension(),
-    EffectsModule.run(PlatformsEffects),
-    EffectsModule.run(VideoGameListingEffects),
     VideoGamesModule
   ],
   declarations: [

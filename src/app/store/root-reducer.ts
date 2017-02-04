@@ -4,8 +4,7 @@ import {compose} from '@ngrx/core/compose';
 import {storeLogger} from 'ngrx-store-logger';
 import {localStorageSync} from 'ngrx-store-localstorage';
 
-import platformsReducer from './platforms/platforms.reducer';
-import videoGameListingReducer from './video-game-listing/video-game-listing.reducer';
+import {platformsReducer, videoGameListingReducer} from '../video-games/store/reducers';
 
 const reducers = {
   platforms: platformsReducer,

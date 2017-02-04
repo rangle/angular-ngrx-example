@@ -6,8 +6,8 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/mergeMap';
 
 import {VideoGameListingStore} from './video-game-listing.store';
-import {createAction} from '../create-action';
-import {VideoGamesService} from '../../video-games/services/video-games.service';
+import {createAction} from '../../../store/create-action';
+import {VideoGamesService} from '../../services/video-games.service';
 
 @Injectable()
 export class VideoGameListingEffects {

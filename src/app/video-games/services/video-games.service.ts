@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 
-import {IVideoGame} from '../../interfaces/video-game/video-game.interface';
 import {ApiService} from '../../root/services/api/api.service';
+import {IVideoGame} from '../interfaces/video-game/video-game.interface';
 
 @Injectable()
 export class VideoGamesService {

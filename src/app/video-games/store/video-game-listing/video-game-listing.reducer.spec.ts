@@ -1,7 +1,10 @@
-import {createAction} from '../create-action';
-import videoGameListingReducer from './video-game-listing.reducer';
-import {createDefaultVideoGameListing} from '../../interfaces/video-game-listing/video-game-listing.interface';
+import {createAction} from '../../../store/create-action';
+import {videoGameListingReducer} from './video-game-listing.reducer';
 import {VideoGameListingStore} from './video-game-listing.store';
+import {
+  createDefaultVideoGameListing,
+  IVideoGameListing
+} from '../../interfaces/video-game-listing/video-game-listing.interface';
 import {createVideoGame} from '../../interfaces/video-game/video-game.interface';
 
 describe('videoGameListingReducer(falsy, unknownAction)', () => {
@@ -14,7 +17,7 @@ describe('videoGameListingReducer(falsy, unknownAction)', () => {
 });
 
 describe('videoGameListingReducer(videoGameListing, retrieveAction)', () => {
-  const videoGameListing = Object.assign(
+  const videoGameListing: IVideoGameListing = Object.assign(
     {}, createDefaultVideoGameListing(), { loadingError: 'Error' }
   );
   const retrieveAction = createAction(VideoGameListingStore.RETRIEVE);

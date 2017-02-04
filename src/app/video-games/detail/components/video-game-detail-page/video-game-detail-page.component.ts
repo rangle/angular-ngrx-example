@@ -3,8 +3,8 @@ import {ActivatedRoute} from '@angular/router';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/switchMap';
 
-import {IVideoGame} from '../../../../interfaces/video-game/video-game.interface';
-import {VideoGameListingStore} from '../../../../store/video-game-listing/video-game-listing.store';
+import {IVideoGame} from '../../../interfaces/video-game/video-game.interface';
+import {VideoGameListingStore} from '../../../store/video-game-listing/video-game-listing.store';
 
 @Component({
   selector: 'app-video-game-detail-page',
