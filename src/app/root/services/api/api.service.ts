@@ -5,7 +5,7 @@ import {Observable} from 'rxjs/Observable';
 @Injectable()
 export class ApiService {
 
-  private readonly location: string = 'http://www.mocky.io/v2';
+  private readonly location = 'http://www.mocky.io/v2';
 
   constructor(private http: Http) {
 
