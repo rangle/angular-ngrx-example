@@ -48,8 +48,8 @@ describe('when there is a list of games from different platforms', () => {
   const videoGameListing: IVideoGameListing =
     Object.assign({}, createDefaultVideoGameListing(), {
       videoGames: [
-        createVideoGame('1', 'Super Mario Odyssey', 'Nintendo Switch'),
-        createVideoGame('2', 'Pillars of Eternity', 'PC')
+        createVideoGame('1', 'Super Mario Odyssey', false, 'Nintendo Switch'),
+        createVideoGame('2', 'Pillars of Eternity', false, 'PC')
       ],
       filters: {
         platform: 'PC'
@@ -67,8 +67,8 @@ describe('when there is a list of games from different platforms', () => {
   const videoGameListing: IVideoGameListing =
     Object.assign({}, createDefaultVideoGameListing(), {
       videoGames: [
-        createVideoGame('1', 'Super Mario Odyssey', 'Nintendo Switch'),
-        createVideoGame('2', 'Pillars of Eternity', 'PC')
+        createVideoGame('1', 'Super Mario Odyssey', false, 'Nintendo Switch'),
+        createVideoGame('2', 'Pillars of Eternity', false, 'PC')
       ],
       filters: {
         platform: 'PC'

@@ -8,9 +8,10 @@ describe('with Super Mario Odyssey', () => {
   const superMarioOdyssey: IVideoGame = {
     id: '1',
     title: 'Super Mario Odyssey',
+    favorite: true,
     description: 'description',
     platform: 'Nintendo Switch',
-    youtubeUrl: 'youtube.com'
+    youtubeUrl: 'youtube.com',
   };
 
   describe('videoGameMatchesSearchQuery(superMarioOdyssey, "Super")', () => {
