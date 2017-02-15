@@ -3,6 +3,7 @@ import {IVideoGameFilters} from '../video-game-listing/video-game-filters.interf
 export interface IVideoGame {
   readonly id: string;
   readonly title: string;
+  readonly favorite: boolean;
   readonly platform?: string;
   readonly description?: string;
   readonly youtubeUrl?: string;
@@ -12,12 +13,13 @@ export interface IVideoGame {
 export function createVideoGame(
   id: string,
   title: string,
+  favorite: boolean = false,
   platform?: string,
   description?: string,
   youtubeUrl?: string,
   imageUrl?: string,
 ) {
-  return {id, title, platform, description, youtubeUrl, imageUrl};
+  return {id, title, favorite, platform, description, youtubeUrl, imageUrl};
 }
 
 function textMatchesSearchQuery(text: string, searchQuery: string) {
