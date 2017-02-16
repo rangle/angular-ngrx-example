@@ -22,5 +22,20 @@
     .platform {
       color: #A7ACB3;
     }
+
+    .favorite-btn {
+      border: none;
+      background: none;
+      float: right;
+      color: #E0E0E0;
+
+      &.active {
+        color: #F44336;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
   }
 }
