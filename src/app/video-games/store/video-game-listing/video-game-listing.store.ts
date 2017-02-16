@@ -20,6 +20,7 @@ export class VideoGameListingStore {
   public static RETRIEVE_ERROR = 'VIDEO_GAME_LISTING_RETRIEVE_ERROR';
   public static SEARCH = 'VIDEO_GAME_LISTING_SEARCH';
   public static FILTER_PLATFORM = 'VIDEO_GAME_LISTING_FILTER_PLATFORM';
+  public static TOGGLE_FAVORITE = 'VIDEO_GAME_TOGGLE_FAVORITE';
 
   constructor(private store: Store<IAppState>) {
 
@@ -49,6 +50,13 @@ export class VideoGameListingStore {
 
   public filterPlatform(platform: string) {
     this.store.dispatch(createAction(VideoGameListingStore.FILTER_PLATFORM, { platform }));
+  }
+
+  public toggleFavorite(id: string) {
+    this.store.dispatch({
+      type: VideoGameListingStore.TOGGLE_FAVORITE,
+      payload: {id}
+    });
   }
 
 }
