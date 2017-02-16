@@ -19,9 +19,12 @@ export function videoGameListingReducer(
         loadingError: null
       });
     case VideoGameListingStore.RETRIEVE_SUCCESS:
+      const videoGames = action.payload.videoGames
+        .map(game => Object.assign({}, game, {favorite: false}));
+
       return Object.assign({}, state, {
         isLoading: false,
-        videoGames: action.payload.videoGames.map(game => Object.assign({}, game, {favorite: false}))
+        videoGames: videoGames
       });
     case VideoGameListingStore.RETRIEVE_ERROR:
       return Object.assign({}, state, {
@@ -38,6 +41,15 @@ export function videoGameListingReducer(
           platform: action.payload.platform
         })
       });
+    case VideoGameListingStore.TOGGLE_FAVORITE:
+      const newVideoGames = state.videoGames
+        .map(game => {
+          return game.id === action.payload.id ?
+            Object.assign({}, game, {favorite: !game.favorite}) :
+            game;
+        });
+
+        return Object.assign({}, state, {videoGames: newVideoGames});
     default:
       return state;
   }
