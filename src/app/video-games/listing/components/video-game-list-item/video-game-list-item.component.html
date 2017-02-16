@@ -3,4 +3,11 @@
   <h3>{{videoGame.title}}</h3>
   <p>{{videoGame.description}}</p>
   <span class="platform">{{videoGame.platform}}</span>
+  <button
+  class="favorite-btn"
+  [class.active]="videoGame.favorite"
+  (click)="toggleVideoGameFavorite();"
+  >
+    <span class="fa fa-2x fa-heart"></span>
+  </button>
 </div>
