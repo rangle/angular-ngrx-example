@@ -1,3 +1,16 @@
 <h2>{{videoGame?.title}}</h2>
 <p>{{videoGame?.description}}</p>
 <app-youtube-video [url]="videoGame.youtubeUrl"></app-youtube-video>
+<div class="btn-group">
+  <button class="btn go-back-btn" (click)="goBack();">
+    <span class="fa fa-arrow-circle-left"></span> Go Back
+  </button>
+
+  <button (click)="toggleFavorite();" *ngIf="!videoGame.favorite" class="btn favorite-btn">
+    <span class="fa fa-heart"></span> Favorite
+  </button>
+
+  <button (click)="toggleFavorite();" *ngIf="videoGame.favorite" class="btn favorite-btn active">
+    <span class="fa fa-check"></span> Favorited
+  </button>
+</div>
