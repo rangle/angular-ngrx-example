@@ -1,6 +1,7 @@
 :host {
   display: block;
   padding: 2rem;
+  text-align: center;
 
   h2 {
     color: #303A4A;
@@ -8,5 +9,54 @@
 
   h2, p {
     margin-top: 0;
+  }
+}
+
+.btn-group {
+  padding: 10px 20px;
+
+  .btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1.2em;
+    margin-left: 5px;
+    margin-right: 5px;
+
+    &:focus {
+      outline: none;
+    }
+
+    &.go-back-btn {
+      color: #FFF;
+      background-color: #2196F3;
+      box-shadow: 0px 5px 0px 0px #1976D2;
+
+      &:active {
+        box-shadow: 0px 2px 0px 0px #1976D2;
+        transform: translateY(3px);
+      }
+    }
+
+    &.favorite-btn {
+      color: #FFF;
+      background: #F44336;
+      box-shadow: 0px 5px 0px 0px #D32F2F;
+
+      &.active {
+        color: #F44336;
+        background: #EEEEEE;
+        box-shadow: 0px 5px 0px 0px #E0E0E0;
+
+        &:active {
+          box-shadow: 0px 2px 0px 0px #E0E0E0;
+          transform: translateY(3px);
+        }
+      }
+      &:active {
+        box-shadow: 0px 2px 0px 0px #D32F2F;
+        transform: translateY(3px);
+      }
+    }
   }
 }
