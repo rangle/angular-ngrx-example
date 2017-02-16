@@ -21,7 +21,7 @@ export function videoGameListingReducer(
     case VideoGameListingStore.RETRIEVE_SUCCESS:
       return Object.assign({}, state, {
         isLoading: false,
-        videoGames: action.payload.videoGames
+        videoGames: action.payload.videoGames.map(game => Object.assign({}, game, {favorite: false}))
       });
     case VideoGameListingStore.RETRIEVE_ERROR:
       return Object.assign({}, state, {
