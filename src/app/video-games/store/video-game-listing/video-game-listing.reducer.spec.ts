@@ -38,12 +38,12 @@ describe('videoGameListingReducer(videoGameListing, retrieveSuccessAction)', () 
     isLoading: true
   });
   const retrieveSuccessAction = createAction(VideoGameListingStore.RETRIEVE_SUCCESS, {
-    videoGames: [createVideoGame('1', 'Super Mario')]
+    videoGames: [createVideoGame('1', 'Super Mario', false)]
   });
 
   it('set the videoGameListing list', () => {
     const newVideoGameListing = videoGameListingReducer(videoGameListing, retrieveSuccessAction);
-    expect(newVideoGameListing.videoGames).toEqual([createVideoGame('1', 'Super Mario')]);
+    expect(newVideoGameListing.videoGames).toEqual([createVideoGame('1', 'Super Mario', false)]);
   });
 
   it('should set isLoading to false', () => {

@@ -9,9 +9,9 @@ describe('when there is a list of 3 unsorted video games', () => {
   const unsortedVideoGameListing: IVideoGameListing =
     Object.assign({}, createDefaultVideoGameListing(), {
       videoGames: [
-        createVideoGame('1', 'Super Mario'),
-        createVideoGame('2', 'Legend of Zelda'),
-        createVideoGame('3', 'Metroid'),
+        createVideoGame('1', 'Super Mario', false),
+        createVideoGame('2', 'Legend of Zelda', true),
+        createVideoGame('3', 'Metroid', false),
       ]
     });
 
@@ -86,8 +86,8 @@ describe('when there is a list of games with a search query', () => {
   const videoGameListing: IVideoGameListing =
     Object.assign({}, createDefaultVideoGameListing(), {
       videoGames: [
-        createVideoGame('1', 'Super Mario Odyssey'),
-        createVideoGame('2', 'Pillars of Eternity')
+        createVideoGame('1', 'Super Mario Odyssey', false),
+        createVideoGame('2', 'Pillars of Eternity', false)
       ],
       searchQuery: 'Sup'
     });

@@ -13,7 +13,7 @@ export interface IVideoGame {
 export function createVideoGame(
   id: string,
   title: string,
-  favorite: boolean = false,
+  favorite: boolean,
   platform?: string,
   description?: string,
   youtubeUrl?: string,
