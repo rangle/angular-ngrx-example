@@ -94,3 +94,25 @@ describe('videoGameListingReducer(videoGameListing, filterPlatformAction)', () =
     expect(newVideoGameListing.filters.platform).toEqual('Nintendo Switch');
   });
 });
+
+describe('videoGameListingReducer(videoGameListing, toggleFavouriteAction)', () => {
+  const retrieveSuccessAction = createAction(VideoGameListingStore.RETRIEVE_SUCCESS, {
+    videoGames: [
+      createVideoGame('1', 'Super Mario', true),
+      createVideoGame('2', 'Legend of Zelda', false)
+    ]
+  });
+  const videoGameListing = videoGameListingReducer(createDefaultVideoGameListing(), retrieveSuccessAction);
+
+  it('should set the "Legend of Zelda" favorite property to true', () => {
+    const toggleFavoriteAction = createAction(VideoGameListingStore.TOGGLE_FAVORITE, {id: '2'});
+    const newVideoGameListing = videoGameListingReducer(videoGameListing, toggleFavoriteAction);
+    expect(newVideoGameListing.videoGames[1].favorite).toEqual(true);
+  });
+
+  it('should set the "Super Mario" favorite property to false', () => {
+    const toggleFavoriteAction = createAction(VideoGameListingStore.TOGGLE_FAVORITE, {id: '1'});
+    const newVideoGameListing = videoGameListingReducer(videoGameListing, toggleFavoriteAction);
+    expect(newVideoGameListing.videoGames[1].favorite).toEqual(false);
+  });
+});
