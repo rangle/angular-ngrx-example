@@ -22,9 +22,15 @@
       cursor: pointer;
       background-color: #FFFFFF;
       margin: 1rem;
+      transition: all 0.25s;
 
       &:hover {
         box-shadow: 1px 1px 6px 2px #DDDFE0;
+        transform: Scale(1.01, 1.01);
+      }
+      &:active {
+        box-shadow: 1px 1px 6px 2px #DDDFE0;
+        transform: Scale(1.01, 1.01);
       }
     }
   }
