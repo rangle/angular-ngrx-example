@@ -2,7 +2,8 @@
   <header>
     <app-video-game-search (queryChanged)="search($event)"></app-video-game-search>
     <app-video-game-filter [platforms]="(platforms$ | async).list"
-                           (filterChanged)="filterPlatform($event)">
+                           (platformFilterChanged)="filterPlatform($event)"
+                           (favoritesFilterChanged)="filterFavorites($event)">
     </app-video-game-filter>
   </header>
 

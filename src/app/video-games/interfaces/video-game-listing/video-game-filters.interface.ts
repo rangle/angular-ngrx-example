@@ -1,9 +1,11 @@
 export interface IVideoGameFilters {
   platform: string;
+  favorites: boolean;
 }
 
 export function createDefaultVideoGameFilters(): IVideoGameFilters {
   return {
-    platform: null
+    platform: null,
+    favorites: false
   };
 }

@@ -39,12 +39,22 @@ export function videoGameMatchesSearchQuery(videoGame: IVideoGame, searchQuery: 
     true;
 }
 
-export function videoGameMatchesFilters(videoGame: IVideoGame, filters: IVideoGameFilters) {
+export function videoGameMatchesPlatformFilter(videoGame: IVideoGame, filters: IVideoGameFilters) {
   if (!Boolean(videoGame)) {
     return false;
   }
 
   return Boolean(filters) && Boolean(filters.platform) ?
     videoGame.platform === filters.platform :
+    true;
+}
+
+export function videoGameMatchesFavoritesFilter(videoGame: IVideoGame, filters: IVideoGameFilters) {
+  if (!Boolean(videoGame)) {
+    return false;
+  }
+
+  return Boolean(filters) && Boolean(filters.favorites) ?
+    videoGame.favorite :
     true;
 }
