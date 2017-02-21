@@ -1,6 +1,7 @@
 import {
   videoGameMatchesSearchQuery, IVideoGame,
-  videoGameMatchesFilters
+  videoGameMatchesPlatformFilter,
+  videoGameMatchesFavoritesFilter
 } from './video-game.interface';
 import {IVideoGameFilters} from '../video-game-listing/video-game-filters.interface';
 
@@ -42,42 +43,88 @@ describe('with Super Mario Odyssey', () => {
     });
   });
 
-  describe('videoGameMatchesFilters(superMarioOdyssey, nintendoSwitch)', () => {
+  describe('videoGameMatchesPlatformFilter(superMarioOdyssey, nintendoSwitch)', () => {
     it('returns true', () => {
       const nintendoSwitch: IVideoGameFilters = {
         platform: 'Nintendo Switch'
       };
 
-      const isMatched = videoGameMatchesFilters(superMarioOdyssey, nintendoSwitch);
+      const isMatched = videoGameMatchesPlatformFilter(superMarioOdyssey, nintendoSwitch);
       expect(isMatched).toEqual(true);
     });
   });
 
-  describe('videoGameMatchesFilters(superMarioOdyssey, nintendoSwitch)', () => {
+  describe('videoGameMatchesPlatformFilter(superMarioOdyssey, nintendoSwitch)', () => {
     it('returns true', () => {
       const nintendoSwitch: IVideoGameFilters = {
         platform: 'Nintendo Switch'
       };
 
-      const isMatched = videoGameMatchesFilters(superMarioOdyssey, nintendoSwitch);
+      const isMatched = videoGameMatchesPlatformFilter(superMarioOdyssey, nintendoSwitch);
       expect(isMatched).toEqual(true);
     });
   });
 
-  describe('videoGameMatchesFilters(superMarioOdyssey, pc)', () => {
+  describe('videoGameMatchesPlatformFilter(superMarioOdyssey, pc)', () => {
     it('returns false', () => {
       const pc: IVideoGameFilters = {
         platform: 'PC'
       };
 
-      const isMatched = videoGameMatchesFilters(superMarioOdyssey, pc);
+      const isMatched = videoGameMatchesPlatformFilter(superMarioOdyssey, pc);
       expect(isMatched).toEqual(false);
     });
   });
 
-  describe('videoGameMatchesFilters(superMarioOdyssey, falsy)', () => {
+  describe('videoGameMatchesPlatformFilter(superMarioOdyssey, falsy)', () => {
     it('returns true', () => {
-      const isMatched = videoGameMatchesFilters(superMarioOdyssey, null);
+      const isMatched = videoGameMatchesPlatformFilter(superMarioOdyssey, null);
+      expect(isMatched).toEqual(true);
+    });
+  });
+
+  describe('videoGameMatchesFavoritesFilter(superMarioOdyssey, favorites:true)', () => {
+    it('returns true', () => {
+      const showFavorites: IVideoGameFilters = {
+        favorites: true
+      };
+
+      const isMatched = videoGameMatchesFavoritesFilter(superMarioOdyssey, showFavorites);
+      expect(isMatched).toEqual(true);
+    });
+  });
+
+  describe('videoGameMatchesFavoritesFilter(superMarioOdyssey, favorites:true)', () => {
+    it('returns false', () => {
+      const mario = Object.assign({}, superMarioOdyssey, {favorite: false});
+      const showFavorites: IVideoGameFilters = {
+        favorites: true
+      };
+
+      const isMatched = videoGameMatchesFavoritesFilter(mario, showFavorites);
+      expect(isMatched).toEqual(false);
+    });
+  });
+
+  describe('videoGameMatchesFavoritesFilter(superMarioOdyssey, favorites:false)', () => {
+    it('returns true', () => {
+      const showFavorites: IVideoGameFilters = {
+        favorites: false
+      };
+
+      const isMatched = videoGameMatchesFavoritesFilter(superMarioOdyssey, showFavorites);
+      expect(isMatched).toEqual(true);
+    });
+  });
+
+  describe('videoGameMatchesFavoritesFilter(superMarioOdyssey, favorites:false)', () => {
+    it('returns true', () => {
+      const mario = Object.assign({}, superMarioOdyssey, {favorite: false});
+      const showFavorites: IVideoGameFilters = {
+        favorites: false
+      };
+
+      const isMatched = videoGameMatchesFavoritesFilter(mario, showFavorites);
       expect(isMatched).toEqual(true);
     });
   });
@@ -91,13 +138,13 @@ describe('when the game is falsy', () => {
     });
   });
 
-  describe('videoGameMatchesFilters(falsy, "Nintendo Switch")', () => {
+  describe('videoGameMatchesPlatformFilter(falsy, "Nintendo Switch")', () => {
     const nintendoSwitch: IVideoGameFilters = {
       platform: 'Nintendo Switch'
     };
 
     it('returns false', () => {
-      const isMatched = videoGameMatchesFilters(null, nintendoSwitch);
+      const isMatched = videoGameMatchesPlatformFilter(null, nintendoSwitch);
       expect(isMatched).toEqual(false);
     });
   });
