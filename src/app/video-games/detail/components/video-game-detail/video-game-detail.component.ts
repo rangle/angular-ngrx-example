@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
-
+import {Location} from '@angular/common';
 import {IVideoGame} from '../../../interfaces/video-game/video-game.interface';
+import {VideoGameListingStore} from '../../../store/video-game-listing/video-game-listing.store';
 
 @Component({
   selector: 'app-video-game-detail',
@@ -11,5 +12,18 @@ export class VideoGameDetailComponent {
 
   @Input()
   public videoGame: IVideoGame;
+
+  constructor(
+    private _location: Location,
+    private videoGameListingStore: VideoGameListingStore
+  ) { }
+
+  public toggleFavorite() {
+    this.videoGameListingStore.toggleFavorite(this.videoGame.id);
+  }
+
+  public goBack() {
+    this._location.back();
+  }
 
 }

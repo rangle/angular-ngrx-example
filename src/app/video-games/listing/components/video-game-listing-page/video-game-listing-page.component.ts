@@ -32,4 +32,8 @@ export class VideoGameListingPageComponent {
     this.videoGameListingStore.filterPlatform(platform);
   }
 
+  public filterFavorites(favoritesFilter: boolean) {
+    this.videoGameListingStore.filterFavorites(favoritesFilter);
+  }
+
 }

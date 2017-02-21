@@ -38,12 +38,12 @@ describe('videoGameListingReducer(videoGameListing, retrieveSuccessAction)', () 
     isLoading: true
   });
   const retrieveSuccessAction = createAction(VideoGameListingStore.RETRIEVE_SUCCESS, {
-    videoGames: [createVideoGame('1', 'Super Mario')]
+    videoGames: [createVideoGame('1', 'Super Mario', false)]
   });
 
   it('set the videoGameListing list', () => {
     const newVideoGameListing = videoGameListingReducer(videoGameListing, retrieveSuccessAction);
-    expect(newVideoGameListing.videoGames).toEqual([createVideoGame('1', 'Super Mario')]);
+    expect(newVideoGameListing.videoGames).toEqual([createVideoGame('1', 'Super Mario', false)]);
   });
 
   it('should set isLoading to false', () => {
@@ -92,5 +92,43 @@ describe('videoGameListingReducer(videoGameListing, filterPlatformAction)', () =
   it('set the search query', () => {
     const newVideoGameListing = videoGameListingReducer(videoGameListing, filterPlatformAction);
     expect(newVideoGameListing.filters.platform).toEqual('Nintendo Switch');
+  });
+});
+
+describe('videoGameListingReducer(videoGameListing, filterFavoritesAction)', () => {
+  const videoGameListing = createDefaultVideoGameListing();
+  const filterFavoritesAction = createAction(VideoGameListingStore.FILTER_FAVORITES, {
+    favorites: true
+  });
+
+  it('favorites filter should be false', () => {
+    expect(videoGameListing.filters.favorites).toEqual(false);
+  });
+
+  it('favorites filter should be true', () => {
+    const newVideoGameListing = videoGameListingReducer(videoGameListing, filterFavoritesAction);
+    expect(newVideoGameListing.filters.favorites).toEqual(true);
+  });
+});
+
+describe('videoGameListingReducer(videoGameListing, toggleFavouriteAction)', () => {
+  const retrieveSuccessAction = createAction(VideoGameListingStore.RETRIEVE_SUCCESS, {
+    videoGames: [
+      createVideoGame('1', 'Super Mario', true),
+      createVideoGame('2', 'Legend of Zelda', false)
+    ]
+  });
+  const videoGameListing = videoGameListingReducer(createDefaultVideoGameListing(), retrieveSuccessAction);
+
+  it('should set the "Legend of Zelda" favorite property to true', () => {
+    const toggleFavoriteAction = createAction(VideoGameListingStore.TOGGLE_FAVORITE, {id: '2'});
+    const newVideoGameListing = videoGameListingReducer(videoGameListing, toggleFavoriteAction);
+    expect(newVideoGameListing.videoGames[1].favorite).toEqual(true);
+  });
+
+  it('should set the "Super Mario" favorite property to false', () => {
+    const toggleFavoriteAction = createAction(VideoGameListingStore.TOGGLE_FAVORITE, {id: '1'});
+    const newVideoGameListing = videoGameListingReducer(videoGameListing, toggleFavoriteAction);
+    expect(newVideoGameListing.videoGames[1].favorite).toEqual(false);
   });
 });

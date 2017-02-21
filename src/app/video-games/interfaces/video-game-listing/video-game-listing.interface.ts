@@ -1,7 +1,8 @@
 import {ILoadable} from '../../../interfaces/loadable';
 import {
   IVideoGame, videoGameMatchesSearchQuery,
-  videoGameMatchesFilters
+  videoGameMatchesPlatformFilter,
+  videoGameMatchesFavoritesFilter
 } from '../video-game/video-game.interface';
 import {
   IVideoGameFilters,
@@ -27,7 +28,8 @@ export function createDefaultVideoGameListing(): IVideoGameListing {
 function getFilteredVideoGames(videoGameListing: IVideoGameListing) {
   return videoGameListing.videoGames
     .filter(videoGame => videoGameMatchesSearchQuery(videoGame, videoGameListing.searchQuery))
-    .filter(videoGame => videoGameMatchesFilters(videoGame, videoGameListing.filters));
+    .filter(videoGame => videoGameMatchesPlatformFilter(videoGame, videoGameListing.filters))
+    .filter(videoGame => videoGameMatchesFavoritesFilter(videoGame, videoGameListing.filters));
 }
 
 export function getVideoGames(videoGameListing: IVideoGameListing) {
