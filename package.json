@@ -13,19 +13,20 @@
     "lint-ts": "tslint \"src/**/*.ts\" --format stylish --project src/tsconfig.json --type-check",
     "lint-sass": "sass-lint",
     "test": "npm run lint && ng test --watch=false",
+    "test-watch": "npm run lint && ng test",
     "pree2e": "webdriver-manager update --standalone false --gecko false",
     "e2e": "protractor"
   },
   "private": true,
   "dependencies": {
-    "@angular/common": "^2.3.1",
-    "@angular/compiler": "^2.3.1",
-    "@angular/core": "^2.3.1",
-    "@angular/forms": "^2.3.1",
-    "@angular/http": "^2.3.1",
-    "@angular/platform-browser": "^2.3.1",
-    "@angular/platform-browser-dynamic": "^2.3.1",
-    "@angular/router": "^3.3.1",
+    "@angular/common": "^4.0.0-beta.8",
+    "@angular/compiler": "^4.0.0-beta.8",
+    "@angular/core": "^4.0.0-beta.8",
+    "@angular/forms": "^4.0.0-beta.8",
+    "@angular/http": "^4.0.0-beta.8",
+    "@angular/platform-browser": "^4.0.0-beta.8",
+    "@angular/platform-browser-dynamic": "^4.0.0-beta.8",
+    "@angular/router": "^4.0.0-beta.8",
     "@ngrx/core": "^1.2.0",
     "@ngrx/effects": "^2.0.0",
     "@ngrx/router-store": "^1.2.5",
@@ -39,10 +40,10 @@
     "zone.js": "^0.7.2"
   },
   "devDependencies": {
-    "@angular/compiler-cli": "^2.3.1",
+    "@angular/cli": "1.0.0-beta.32.3",
+    "@angular/compiler-cli": "^4.0.0-beta.8",
     "@types/jasmine": "2.5.38",
     "@types/node": "^6.0.42",
-    "angular-cli": "1.0.0-beta.25.5",
     "codelyzer": "^2.0.0-beta.1",
     "jasmine-core": "2.5.2",
     "jasmine-spec-reporter": "2.5.0",
@@ -58,6 +59,6 @@
     "sass-lint": "^1.10.2",
     "ts-node": "1.2.1",
     "tslint": "^4.3.0",
-    "typescript": "~2.0.3"
+    "typescript": "~2.1"
   }
 }
