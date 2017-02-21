@@ -41,6 +41,12 @@ export function videoGameListingReducer(
           platform: action.payload.platform
         })
       });
+    case VideoGameListingStore.FILTER_FAVORITES:
+      return Object.assign({}, state, {
+        filters: Object.assign({}, state.filters, {
+          favorites: action.payload.favorites
+        })
+      });
     case VideoGameListingStore.TOGGLE_FAVORITE:
       const newVideoGames = state.videoGames
         .map(game => {

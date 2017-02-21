@@ -11,6 +11,9 @@ export class VideoGameFilterComponent {
   public platforms: Array<string>;
 
   @Output()
-  public filterChanged = new EventEmitter<string>();
+  public platformFilterChanged = new EventEmitter<string>();
+
+  @Output()
+  public favoritesFilterChanged = new EventEmitter<boolean>();
 
 }
