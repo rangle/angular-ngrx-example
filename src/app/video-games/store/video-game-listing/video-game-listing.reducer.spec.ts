@@ -105,7 +105,7 @@ describe('videoGameListingReducer(videoGameListing, filterFavoritesAction)', () 
     expect(videoGameListing.filters.favorites).toEqual(false);
   });
 
-  it('set the search query', () => {
+  it('favorites filter should be true', () => {
     const newVideoGameListing = videoGameListingReducer(videoGameListing, filterFavoritesAction);
     expect(newVideoGameListing.filters.favorites).toEqual(true);
   });
