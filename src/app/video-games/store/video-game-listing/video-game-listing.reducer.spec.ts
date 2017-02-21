@@ -95,6 +95,22 @@ describe('videoGameListingReducer(videoGameListing, filterPlatformAction)', () =
   });
 });
 
+describe('videoGameListingReducer(videoGameListing, filterFavoritesAction)', () => {
+  const videoGameListing = createDefaultVideoGameListing();
+  const filterFavoritesAction = createAction(VideoGameListingStore.FILTER_FAVORITES, {
+    favorites: true
+  });
+
+  it('favorites filter should be false', () => {
+    expect(videoGameListing.filters.favorites).toEqual(false);
+  });
+
+  it('set the search query', () => {
+    const newVideoGameListing = videoGameListingReducer(videoGameListing, filterFavoritesAction);
+    expect(newVideoGameListing.filters.favorites).toEqual(true);
+  });
+});
+
 describe('videoGameListingReducer(videoGameListing, toggleFavouriteAction)', () => {
   const retrieveSuccessAction = createAction(VideoGameListingStore.RETRIEVE_SUCCESS, {
     videoGames: [
