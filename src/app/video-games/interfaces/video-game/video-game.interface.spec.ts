@@ -96,7 +96,7 @@ describe('with Super Mario Odyssey', () => {
 
   describe('videoGameMatchesFavoritesFilter(superMarioOdyssey, favorites:true)', () => {
     it('returns false', () => {
-      const mario = Object.assign({}, superMarioOdyssey, {favorite: false});
+      const mario = {...superMarioOdyssey, favorite: false};
       const showFavorites: IVideoGameFilters = {
         favorites: true
       };
@@ -119,7 +119,7 @@ describe('with Super Mario Odyssey', () => {
 
   describe('videoGameMatchesFavoritesFilter(superMarioOdyssey, favorites:false)', () => {
     it('returns true', () => {
-      const mario = Object.assign({}, superMarioOdyssey, {favorite: false});
+      const mario = {...superMarioOdyssey, favorite: false};
       const showFavorites: IVideoGameFilters = {
         favorites: false
       };

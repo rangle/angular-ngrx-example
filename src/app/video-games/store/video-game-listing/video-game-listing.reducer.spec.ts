@@ -17,9 +17,10 @@ describe('videoGameListingReducer(falsy, unknownAction)', () => {
 });
 
 describe('videoGameListingReducer(videoGameListing, retrieveAction)', () => {
-  const videoGameListing: IVideoGameListing = Object.assign(
-    {}, createDefaultVideoGameListing(), { loadingError: 'Error' }
-  );
+  const videoGameListing: IVideoGameListing = {
+    ...createDefaultVideoGameListing(),
+    loadingError: 'Error'
+  };
   const retrieveAction = createAction(VideoGameListingStore.RETRIEVE);
 
   it('sets isLoading to true', () => {
@@ -34,9 +35,10 @@ describe('videoGameListingReducer(videoGameListing, retrieveAction)', () => {
 });
 
 describe('videoGameListingReducer(videoGameListing, retrieveSuccessAction)', () => {
-  const videoGameListing = Object.assign({}, createDefaultVideoGameListing(), {
+  const videoGameListing = {
+    ...createDefaultVideoGameListing(),
     isLoading: true
-  });
+  };
   const retrieveSuccessAction = createAction(VideoGameListingStore.RETRIEVE_SUCCESS, {
     videoGames: [createVideoGame('1', 'Super Mario', false)]
   });
@@ -53,9 +55,10 @@ describe('videoGameListingReducer(videoGameListing, retrieveSuccessAction)', () 
 });
 
 describe('videoGameListingReducer(videoGameListing, retrieveErrorAction)', () => {
-  const videoGameListing = Object.assign({}, createDefaultVideoGameListing(), {
+  const videoGameListing = {
+    ...createDefaultVideoGameListing(),
     isLoading: true
-  });
+  };
   const retrieveErrorAction = createAction(VideoGameListingStore.RETRIEVE_ERROR, {
     error: 'Error Message'
   });
