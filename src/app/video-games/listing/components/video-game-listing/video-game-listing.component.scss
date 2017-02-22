@@ -5,32 +5,30 @@
   overflow-y: auto;
   overflow-x: hidden;
 
-  p, ul {
-    flex-grow: 1;
-    margin: 0;
-    padding: 1rem;
-  }
+  .container {
+    width: 90%;
+    margin: 0 auto;
 
-  ul {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    list-style: none;
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      padding: 1.5%;
+      margin-top: 15px;
+      box-sizing: border-box;
 
-    li {
-      color: #303A4A;
-      cursor: pointer;
-      background-color: #FFFFFF;
-      margin: 1rem;
-      transition: all 0.25s;
+      .card {
+        margin: 0 20px 30px 20px;
+        background: #FFF;
+        border-radius: 6px;
+        box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.19);
+        transition: all 0.25s ease-in;
 
-      &:hover {
-        box-shadow: 1px 1px 6px 2px #DDDFE0;
-        transform: Scale(1.01, 1.01);
-      }
-      &:active {
-        box-shadow: 1px 1px 6px 2px #DDDFE0;
-        transform: Scale(1.01, 1.01);
+        &:hover, &:focus {
+          transform: scale(1.02,1.02);
+          box-shadow: 0px 1px 9px 2px rgba(0,0,0,0.29);
+          outline: none;
+        }
       }
     }
   }
