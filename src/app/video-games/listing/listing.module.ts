@@ -13,6 +13,7 @@ import {
   CardsComponent,
   CardComponent
 } from './components';
+import { FavoriteToggleComponent } from './components/favorite-toggle/favorite-toggle.component';
 
 @NgModule({
   imports: [
@@ -27,7 +28,8 @@ import {
     VideoGameListItemComponent,
     VideoGameSearchComponent,
     CardsComponent,
-    CardComponent
+    CardComponent,
+    FavoriteToggleComponent
   ],
   providers: []
 })
