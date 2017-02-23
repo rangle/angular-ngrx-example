@@ -1,10 +1,10 @@
-<app-cards-container *ngIf="videoGames.length > 0">
+<app-cards *ngIf="videoGames.length > 0">
     <app-card class="card" *ngFor="let videoGame of videoGames"
         [routerLink]="['/videoGames', videoGame.id]">
       <app-video-game-list-item [videoGame]="videoGame">
       </app-video-game-list-item>
     </app-card>
-</app-cards-container>
+</app-cards>
 
 <p *ngIf="videoGames.length === 0">
   There are no games that match your criteria.

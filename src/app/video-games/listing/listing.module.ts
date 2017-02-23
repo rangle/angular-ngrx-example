@@ -10,7 +10,7 @@ import {
   VideoGameListingPageComponent,
   VideoGameListItemComponent,
   VideoGameSearchComponent,
-  CardsContainerComponent,
+  CardsComponent,
   CardComponent
 } from './components';
 
@@ -26,7 +26,7 @@ import {
     VideoGameListingPageComponent,
     VideoGameListItemComponent,
     VideoGameSearchComponent,
-    CardsContainerComponent,
+    CardsComponent,
     CardComponent
   ],
   providers: []
