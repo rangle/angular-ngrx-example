@@ -5,4 +5,11 @@
   <app-button (onClick)="goBack();">
     <span class="fa fa-arrow-circle-left"></span> Go Back
   </app-button>
+  <app-button-toggle
+    [active]="videoGame.favorite"
+    (onToggle)="toggleFavorite();"
+  >
+    <span class="fa fa-{{videoGame.favorite ? 'times' : 'heart'}}"></span>
+    {{videoGame.favorite ? 'Unfavorite' : 'Favorite'}}
+  </app-button-toggle>
 </app-button-group>

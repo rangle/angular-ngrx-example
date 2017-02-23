@@ -9,7 +9,8 @@ import {
   VideoGameDetailPageComponent,
   YouTubeVideoComponent,
   ButtonGroupComponent,
-  ButtonComponent
+  ButtonComponent,
+  ButtonToggleComponent
 } from './components';
 
 
@@ -24,7 +25,8 @@ import {
     VideoGameDetailPageComponent,
     YouTubeVideoComponent,
     ButtonGroupComponent,
-    ButtonComponent
+    ButtonComponent,
+    ButtonToggleComponent
   ],
   providers: []
 })
