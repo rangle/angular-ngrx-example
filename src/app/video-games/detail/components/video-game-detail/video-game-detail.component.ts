@@ -14,7 +14,7 @@ export class VideoGameDetailComponent {
   public videoGame: IVideoGame;
 
   constructor(
-    private _location: Location,
+    private location: Location,
     private videoGameListingStore: VideoGameListingStore
   ) { }
 
@@ -23,7 +23,7 @@ export class VideoGameDetailComponent {
   }
 
   public goBack() {
-    this._location.back();
+    this.location.back();
   }
 
 }
