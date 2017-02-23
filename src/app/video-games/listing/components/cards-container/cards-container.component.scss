@@ -1,13 +1,8 @@
 :host {
-  width: 90%;
-  margin: 0 auto;
-
-  .cards {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    padding: 1.5%;
-    margin-top: 15px;
-    box-sizing: border-box;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 1.5%;
+  margin-top: 15px;
+  box-sizing: border-box;
 }
