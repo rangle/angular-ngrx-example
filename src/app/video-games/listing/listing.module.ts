@@ -9,7 +9,9 @@ import {
   VideoGameListingComponent,
   VideoGameListingPageComponent,
   VideoGameListItemComponent,
-  VideoGameSearchComponent
+  VideoGameSearchComponent,
+  CardsContainerComponent,
+  CardComponent
 } from './components';
 
 @NgModule({
@@ -23,7 +25,9 @@ import {
     VideoGameListingComponent,
     VideoGameListingPageComponent,
     VideoGameListItemComponent,
-    VideoGameSearchComponent
+    VideoGameSearchComponent,
+    CardsContainerComponent,
+    CardComponent
   ],
   providers: []
 })
