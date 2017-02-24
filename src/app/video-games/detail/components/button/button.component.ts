@@ -11,5 +11,5 @@ export class ButtonComponent {
   public type = 'primary';
 
   @Output()
-  public onClick = new EventEmitter();
+  public onButtonPressed = new EventEmitter();
 }

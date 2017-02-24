@@ -2,7 +2,7 @@
 <p>{{videoGame?.description}}</p>
 <app-youtube-video [url]="videoGame.youtubeUrl"></app-youtube-video>
 <app-button-group>
-  <app-button (onClick)="goBack();">
+  <app-button (onButtonPressed)="goBack();">
     <span class="fa fa-arrow-circle-left"></span> Go Back
   </app-button>
   <app-button-toggle
