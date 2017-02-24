@@ -2,25 +2,54 @@
   display: flex;
   flex-direction: column;
   width: 24rem;
+  height: 100%;
+  justify-content: space-between;
 
   img {
     height: 15rem;
     width: auto;
+    border-radius: 0.35rem 0.35rem 0 0;
   }
 
   .details {
     padding: 1rem;
 
     h3 {
-      margin-top: 0;
+      margin: 0;
+      text-align: center;
+      color: #455A64;
     }
 
-    p {
-      color: #A7ACB3;
-    }
+
+  }
+
+  .footer {
+    padding: 0.75rem 1.25rem;
+    background-color: #f7f7f9;
+    border-radius: 0 0 0.35rem 0.35rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.125);
+    width: 100%;
 
     .platform {
-      color: #A7ACB3;
+      color: #78909C;
     }
   }
+
+    .favorite-btn {
+      border: none;
+      background: none;
+      float: right;
+      color: #B0BEC5;
+
+      &.active {
+        color: #F44336;
+      }
+
+      &:focus {
+        outline: none;
+      }
+      &:active {
+        transform: scale(1.2,1.2);
+      }
+    }
 }

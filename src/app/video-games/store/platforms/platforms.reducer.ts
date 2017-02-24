@@ -11,20 +11,23 @@ export function platformsReducer(state: IPlatforms, action: Action): IPlatforms 
 
   switch (action.type) {
     case PlatformsStore.RETRIEVE:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         isLoading: true,
         loadingError: null
-      });
+      };
     case PlatformsStore.RETRIEVE_SUCCESS:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         isLoading: false,
         list: action.payload.platforms
-      });
+      };
     case PlatformsStore.RETRIEVE_ERROR:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         isLoading: false,
         loadingError: action.payload.error
-      });
+      };
     default:
       return state;
   }

@@ -1,0 +1,31 @@
+button {
+  padding: 0.6rem 1.25rem;
+  border-radius: 0.35rem;
+  border: none;
+  font-size: 1.2em;
+  margin-left: 0.4rem;
+  margin-right: 0.4rem;
+  color: #FFF;
+  background: #F44336;
+  box-shadow: 0px 5px 0px 0px #D32F2F;
+
+  &:active {
+    box-shadow: 0px 2px 0px 0px #D32F2F;
+    transform: translateY(3px);
+  }
+
+  &.toggled {
+    color: #F44336;
+    background: #EEEEEE;
+    box-shadow: 0px 5px 0px 0px #E0E0E0;
+
+    &:active {
+      box-shadow: 0px 2px 0px 0px #E0E0E0;
+      transform: translateY(3px);
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+}

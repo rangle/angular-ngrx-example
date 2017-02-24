@@ -1,0 +1,17 @@
+button {
+  border: none;
+  background: none;
+  float: right;
+  color: #B0BEC5;
+
+  &.active {
+    color: #F44336;
+  }
+
+  &:focus {
+    outline: none;
+  }
+  &:active {
+    transform: scale(1.2,1.2);
+  }
+}

@@ -14,30 +14,55 @@ export function videoGameListingReducer(
 
   switch (action.type) {
     case VideoGameListingStore.RETRIEVE:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         isLoading: true,
         loadingError: null
-      });
+      };
     case VideoGameListingStore.RETRIEVE_SUCCESS:
-      return Object.assign({}, state, {
+      const videoGames = action.payload.videoGames
+        .map(game => ({...game, favorite: false}));
+
+      return {
+        ...state,
         isLoading: false,
-        videoGames: action.payload.videoGames
-      });
+        videoGames: videoGames
+      };
     case VideoGameListingStore.RETRIEVE_ERROR:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         isLoading: false,
         loadingError: action.payload.error
-      });
+      };
     case VideoGameListingStore.SEARCH:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         searchQuery: action.payload.query
-      });
+      };
     case VideoGameListingStore.FILTER_PLATFORM:
-      return Object.assign({}, state, {
-        filters: Object.assign({}, state.filters, {
+      return {
+        ...state,
+        filters: {
+          ...state.filters,
           platform: action.payload.platform
-        })
-      });
+        }
+      };
+    case VideoGameListingStore.FILTER_FAVORITES:
+      return {
+        ...state,
+        filters: {
+          ...state.filters,
+          favorites: action.payload.favorites
+        }
+      };
+    case VideoGameListingStore.TOGGLE_FAVORITE:
+      const newVideoGames = state.videoGames
+        .map(game => {
+          return game.id === action.payload.id ?
+            {...game, favorite: !game.favorite} : game;
+        });
+
+        return {...state, videoGames: newVideoGames};
     default:
       return state;
   }

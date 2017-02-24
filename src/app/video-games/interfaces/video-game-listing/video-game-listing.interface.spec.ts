@@ -6,14 +6,14 @@ import {
 import {createVideoGame} from '../video-game/video-game.interface';
 
 describe('when there is a list of 3 unsorted video games', () => {
-  const unsortedVideoGameListing: IVideoGameListing =
-    Object.assign({}, createDefaultVideoGameListing(), {
-      videoGames: [
-        createVideoGame('1', 'Super Mario'),
-        createVideoGame('2', 'Legend of Zelda'),
-        createVideoGame('3', 'Metroid'),
-      ]
-    });
+  const unsortedVideoGameListing: IVideoGameListing = {
+    ...createDefaultVideoGameListing(),
+    videoGames: [
+      createVideoGame('1', 'Super Mario', false),
+      createVideoGame('2', 'Legend of Zelda', true),
+      createVideoGame('3', 'Metroid', false),
+    ]
+  };
 
   describe('getVideoGames(unsortedVideoGameListing)', () => {
     it('returns a list of containing 3 elements', () => {
@@ -45,16 +45,16 @@ describe('when there is a list of 3 unsorted video games', () => {
 });
 
 describe('when there is a list of games from different platforms', () => {
-  const videoGameListing: IVideoGameListing =
-    Object.assign({}, createDefaultVideoGameListing(), {
-      videoGames: [
-        createVideoGame('1', 'Super Mario Odyssey', 'Nintendo Switch'),
-        createVideoGame('2', 'Pillars of Eternity', 'PC')
-      ],
-      filters: {
-        platform: 'PC'
-      }
-    });
+  const videoGameListing: IVideoGameListing = {
+    ...createDefaultVideoGameListing(),
+    videoGames: [
+      createVideoGame('1', 'Super Mario Odyssey', false, 'Nintendo Switch'),
+      createVideoGame('2', 'Pillars of Eternity', false, 'PC')
+    ],
+    filters: {
+      platform: 'PC'
+    }
+  };
 
   it('should return a list that matches the specified platform only', () => {
     const videoGames = getVideoGames(videoGameListing);
@@ -64,16 +64,16 @@ describe('when there is a list of games from different platforms', () => {
 });
 
 describe('when there is a list of games from different platforms', () => {
-  const videoGameListing: IVideoGameListing =
-    Object.assign({}, createDefaultVideoGameListing(), {
-      videoGames: [
-        createVideoGame('1', 'Super Mario Odyssey', 'Nintendo Switch'),
-        createVideoGame('2', 'Pillars of Eternity', 'PC')
-      ],
-      filters: {
-        platform: 'PC'
-      }
-    });
+  const videoGameListing: IVideoGameListing = {
+    ...createDefaultVideoGameListing(),
+    videoGames: [
+      createVideoGame('1', 'Super Mario Odyssey', false, 'Nintendo Switch'),
+      createVideoGame('2', 'Pillars of Eternity', false, 'PC')
+    ],
+    filters: {
+      platform: 'PC'
+    }
+  };
 
   it('should return a list that matches the specified platform only', () => {
     const videoGames = getVideoGames(videoGameListing);
@@ -83,14 +83,14 @@ describe('when there is a list of games from different platforms', () => {
 });
 
 describe('when there is a list of games with a search query', () => {
-  const videoGameListing: IVideoGameListing =
-    Object.assign({}, createDefaultVideoGameListing(), {
-      videoGames: [
-        createVideoGame('1', 'Super Mario Odyssey'),
-        createVideoGame('2', 'Pillars of Eternity')
-      ],
-      searchQuery: 'Sup'
-    });
+  const videoGameListing: IVideoGameListing = {
+    ...createDefaultVideoGameListing(),
+    videoGames: [
+      createVideoGame('1', 'Super Mario Odyssey', false),
+      createVideoGame('2', 'Pillars of Eternity', false)
+    ],
+    searchQuery: 'Sup'
+  };
 
   it('should return a list that includes the searchQuery string', () => {
     const videoGames = getVideoGames(videoGameListing);

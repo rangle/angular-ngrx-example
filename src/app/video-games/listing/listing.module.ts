@@ -9,8 +9,11 @@ import {
   VideoGameListingComponent,
   VideoGameListingPageComponent,
   VideoGameListItemComponent,
-  VideoGameSearchComponent
+  VideoGameSearchComponent,
+  CardsComponent,
+  CardComponent
 } from './components';
+import { FavoriteToggleComponent } from './components/favorite-toggle/favorite-toggle.component';
 
 @NgModule({
   imports: [
@@ -23,7 +26,10 @@ import {
     VideoGameListingComponent,
     VideoGameListingPageComponent,
     VideoGameListItemComponent,
-    VideoGameSearchComponent
+    VideoGameSearchComponent,
+    CardsComponent,
+    CardComponent,
+    FavoriteToggleComponent
   ],
   providers: []
 })

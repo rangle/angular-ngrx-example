@@ -1,6 +1,11 @@
 <img [src]="videoGame.imageUrl"/>
 <div class="details">
   <h3>{{videoGame.title}}</h3>
-  <p>{{videoGame.description}}</p>
+</div>
+<div class="footer">
   <span class="platform">{{videoGame.platform}}</span>
+  <app-favorite-toggle
+  [active]="videoGame.favorite"
+  (onToggle)="toggleVideoGameFavorite();"
+  ></app-favorite-toggle>
 </div>

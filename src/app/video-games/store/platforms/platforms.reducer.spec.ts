@@ -13,9 +13,7 @@ describe('platformsReducer(falsy, unknownAction)', () => {
 });
 
 describe('platformsReducer(platforms, retrieveAction)', () => {
-  const platforms = Object.assign(
-    {}, createDefaultPlatforms(), { loadingError: 'Error' }
-  );
+  const platforms = {...createDefaultPlatforms(), loadingError: 'Error' };
   const retrieveAction = createAction(PlatformsStore.RETRIEVE);
 
   it('sets isLoading to true', () => {
@@ -30,9 +28,7 @@ describe('platformsReducer(platforms, retrieveAction)', () => {
 });
 
 describe('platformsReducer(platforms, retrieveSuccessAction)', () => {
-  const platforms = Object.assign({}, createDefaultPlatforms(), {
-    isLoading: true
-  });
+  const platforms = {...createDefaultPlatforms(), isLoading: true};
   const retrieveSuccessAction = createAction(PlatformsStore.RETRIEVE_SUCCESS, {
     platforms: ['Nintendo Switch', 'PC']
   });
@@ -49,9 +45,7 @@ describe('platformsReducer(platforms, retrieveSuccessAction)', () => {
 });
 
 describe('platformsReducer(platforms, retrieveErrorAction)', () => {
-  const platforms = Object.assign({}, createDefaultPlatforms(), {
-    isLoading: true
-  });
+  const platforms = {...createDefaultPlatforms(), isLoading: true};
   const retrieveErrorAction = createAction(PlatformsStore.RETRIEVE_ERROR, {
     error: 'Error Message'
   });

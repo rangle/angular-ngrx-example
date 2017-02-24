@@ -7,8 +7,12 @@ import {SharedComponentsModule} from '../../shared/components/shared-components.
 import {
   VideoGameDetailComponent,
   VideoGameDetailPageComponent,
-  YouTubeVideoComponent
+  YouTubeVideoComponent,
+  ButtonGroupComponent,
+  ButtonComponent,
+  ButtonToggleComponent
 } from './components';
+
 
 @NgModule({
   imports: [
@@ -19,7 +23,10 @@ import {
   declarations: [
     VideoGameDetailComponent,
     VideoGameDetailPageComponent,
-    YouTubeVideoComponent
+    YouTubeVideoComponent,
+    ButtonGroupComponent,
+    ButtonComponent,
+    ButtonToggleComponent
   ],
   providers: []
 })

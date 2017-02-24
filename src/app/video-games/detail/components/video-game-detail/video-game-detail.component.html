@@ -1,3 +1,15 @@
 <h2>{{videoGame?.title}}</h2>
 <p>{{videoGame?.description}}</p>
 <app-youtube-video [url]="videoGame.youtubeUrl"></app-youtube-video>
+<app-button-group>
+  <app-button (onButtonPressed)="goBack();">
+    <span class="fa fa-arrow-circle-left"></span> Go Back
+  </app-button>
+  <app-button-toggle
+    [isToggled]="videoGame.favorite"
+    (onToggle)="toggleFavorite();"
+  >
+    <span class="fa fa-{{videoGame.favorite ? 'times' : 'heart'}}"></span>
+    {{videoGame.favorite ? 'Unfavorite' : 'Favorite'}}
+  </app-button-toggle>
+</app-button-group>
