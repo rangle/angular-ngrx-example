@@ -6,7 +6,7 @@
     <span class="fa fa-arrow-circle-left"></span> Go Back
   </app-button>
   <app-button-toggle
-    [active]="videoGame.favorite"
+    [isToggled]="videoGame.favorite"
     (onToggle)="toggleFavorite();"
   >
     <span class="fa fa-{{videoGame.favorite ? 'times' : 'heart'}}"></span>

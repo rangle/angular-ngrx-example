@@ -14,7 +14,7 @@ button {
     transform: translateY(3px);
   }
 
-  &.active {
+  &.toggled {
     color: #F44336;
     background: #EEEEEE;
     box-shadow: 0px 5px 0px 0px #E0E0E0;

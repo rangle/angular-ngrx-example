@@ -8,7 +8,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class ButtonToggleComponent {
 
   @Input()
-  public active: boolean;
+  public isToggled: boolean;
 
   @Output()
   public onToggle = new EventEmitter();
