@@ -1,7 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "version": "1.0.0-rc.0",
     "name": "angular2-ngrx-example"
   },
   "apps": [
@@ -19,7 +18,6 @@
       "tsconfig": "tsconfig.app.json",
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
-      "mobile": false,
       "styles": [
         "styles.css",
         "../node_modules/font-awesome/css/font-awesome.css"
@@ -33,7 +31,6 @@
     }
   ],
   "addons": ["../node_modules/font-awesome/fonts/*.+(otf|eot|svg|ttf|woff|woff2)"],
-  "packages": [],
   "e2e": {
     "protractor": {
       "config": "./protractor.conf.js"
@@ -57,9 +54,6 @@
   },
   "defaults": {
     "styleExt": "css",
-    "component": {
-      "inlineTemplate": false,
-      "spec": true
-    }
+    "component": {}
   }
 }
