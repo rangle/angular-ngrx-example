@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "version": "1.0.0-beta.25.5",
+    "version": "1.0.0-rc.0",
     "name": "angular2-ngrx-example"
   },
   "apps": [
