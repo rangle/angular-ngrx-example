@@ -1,8 +1,8 @@
 {
   "name": "angular2-ngrx-example",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "engines": {
-    "node": "6.0.0"
+    "node": "6.9.5"
   },
   "license": "MIT",
   "angular-cli": {},
@@ -37,7 +37,7 @@
     "zone.js": "^0.7.6"
   },
   "devDependencies": {
-    "@angular/cli": "1.0.0-rc.0",
+    "@angular/cli": "^1.0.0-rc.0",
     "@angular/compiler-cli": "^4.0.0-rc.1",
     "@types/jasmine": "2.5.38",
     "@types/node": "~6.0.60",
@@ -46,9 +46,9 @@
     "karma": "~1.4.1",
     "karma-chrome-launcher": "~2.0.0",
     "karma-cli": "~1.0.1",
+    "karma-coverage-istanbul-reporter": "^0.2.0",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "0.2.2",
-    "karma-coverage-istanbul-reporter": "^0.2.0",
     "postcss-loader": "^1.2.2",
     "postcss-smart-import": "^0.6.7",
     "precss": "^1.4.0",
