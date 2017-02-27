@@ -3,17 +3,23 @@ import {
   videoGameMatchesPlatformFilter,
   videoGameMatchesFavoritesFilter
 } from './video-game.interface';
-import {IVideoGameFilters} from '../video-game-listing/video-game-filters.interface';
+import {
+  IVideoGameFilters,
+  createDefaultVideoGameFilters
+} from '../video-game-listing/video-game-filters.interface';
 
 describe('with Super Mario Odyssey', () => {
-  const superMarioOdyssey: IVideoGame = {
-    id: '1',
-    title: 'Super Mario Odyssey',
-    favorite: true,
-    description: 'description',
-    platform: 'Nintendo Switch',
-    youtubeUrl: 'youtube.com',
-  };
+  let superMarioOdyssey: IVideoGame;
+
+  beforeEach(() => {
+    superMarioOdyssey = {
+      id: '1',
+      title: 'Super Mario Odyssey',
+      description: 'description',
+      platform: 'Nintendo Switch',
+      youtubeUrl: 'youtube.com',
+    };
+  });
 
   describe('videoGameMatchesSearchQuery(superMarioOdyssey, "Super")', () => {
     it('returns true', () => {
@@ -46,7 +52,8 @@ describe('with Super Mario Odyssey', () => {
   describe('videoGameMatchesPlatformFilter(superMarioOdyssey, nintendoSwitch)', () => {
     it('returns true', () => {
       const nintendoSwitch: IVideoGameFilters = {
-        platform: 'Nintendo Switch'
+        ...createDefaultVideoGameFilters(),
+        platform: 'Nintendo Switch',
       };
 
       const isMatched = videoGameMatchesPlatformFilter(superMarioOdyssey, nintendoSwitch);
@@ -57,7 +64,8 @@ describe('with Super Mario Odyssey', () => {
   describe('videoGameMatchesPlatformFilter(superMarioOdyssey, nintendoSwitch)', () => {
     it('returns true', () => {
       const nintendoSwitch: IVideoGameFilters = {
-        platform: 'Nintendo Switch'
+        ...createDefaultVideoGameFilters(),
+        platform: 'Nintendo Switch',
       };
 
       const isMatched = videoGameMatchesPlatformFilter(superMarioOdyssey, nintendoSwitch);
@@ -68,7 +76,8 @@ describe('with Super Mario Odyssey', () => {
   describe('videoGameMatchesPlatformFilter(superMarioOdyssey, pc)', () => {
     it('returns false', () => {
       const pc: IVideoGameFilters = {
-        platform: 'PC'
+        ...createDefaultVideoGameFilters(),
+        platform: 'PC',
       };
 
       const isMatched = videoGameMatchesPlatformFilter(superMarioOdyssey, pc);
@@ -83,49 +92,63 @@ describe('with Super Mario Odyssey', () => {
     });
   });
 
-  describe('videoGameMatchesFavoritesFilter(superMarioOdyssey, favorites:true)', () => {
-    it('returns true', () => {
-      const showFavorites: IVideoGameFilters = {
-        favorites: true
-      };
+  describe('and it is favourited', () => {
+    beforeEach(() => {
+      superMarioOdyssey = { ...superMarioOdyssey, favorite: true };
+    });
 
-      const isMatched = videoGameMatchesFavoritesFilter(superMarioOdyssey, showFavorites);
-      expect(isMatched).toEqual(true);
+    describe('videoGameMatchesFavoritesFilter(superMarioOdyssey, favorites:true)', () => {
+      it('returns true', () => {
+        const showFavorites: IVideoGameFilters = {
+          ...createDefaultVideoGameFilters(),
+          favorites: true,
+        };
+
+        const isMatched = videoGameMatchesFavoritesFilter(superMarioOdyssey, showFavorites);
+        expect(isMatched).toEqual(true);
+      });
+    });
+
+    describe('videoGameMatchesFavoritesFilter(superMarioOdyssey, favorites:false)', () => {
+      it('returns true', () => {
+        const showFavorites: IVideoGameFilters = {
+          ...createDefaultVideoGameFilters(),
+          favorites: false,
+        };
+
+        const isMatched = videoGameMatchesFavoritesFilter(superMarioOdyssey, showFavorites);
+        expect(isMatched).toEqual(true);
+      });
     });
   });
 
-  describe('videoGameMatchesFavoritesFilter(superMarioOdyssey, favorites:true)', () => {
-    it('returns false', () => {
-      const mario = {...superMarioOdyssey, favorite: false};
-      const showFavorites: IVideoGameFilters = {
-        favorites: true
-      };
-
-      const isMatched = videoGameMatchesFavoritesFilter(mario, showFavorites);
-      expect(isMatched).toEqual(false);
+  describe('and it is not favourited', () => {
+    beforeEach(() => {
+      superMarioOdyssey = { ...superMarioOdyssey, favorite: false };
     });
-  });
 
-  describe('videoGameMatchesFavoritesFilter(superMarioOdyssey, favorites:false)', () => {
-    it('returns true', () => {
-      const showFavorites: IVideoGameFilters = {
-        favorites: false
-      };
+    describe('videoGameMatchesFavoritesFilter(superMarioOdyssey, favorites:true)', () => {
+      it('returns false', () => {
+        const filters: IVideoGameFilters = {
+          ...createDefaultVideoGameFilters(),
+          favorites: true,
+        };
 
-      const isMatched = videoGameMatchesFavoritesFilter(superMarioOdyssey, showFavorites);
-      expect(isMatched).toEqual(true);
+        const isMatched = videoGameMatchesFavoritesFilter(superMarioOdyssey, filters);
+        expect(isMatched).toEqual(false);
+      });
     });
-  });
 
-  describe('videoGameMatchesFavoritesFilter(superMarioOdyssey, favorites:false)', () => {
-    it('returns true', () => {
-      const mario = {...superMarioOdyssey, favorite: false};
-      const showFavorites: IVideoGameFilters = {
-        favorites: false
-      };
+    describe('videoGameMatchesFavoritesFilter(superMarioOdyssey, favorites:false)', () => {
+      it('returns true', () => {
+        const filters: IVideoGameFilters = {
+          ...createDefaultVideoGameFilters(),
+          favorites: false,
+        };
 
-      const isMatched = videoGameMatchesFavoritesFilter(mario, showFavorites);
-      expect(isMatched).toEqual(true);
+        const isMatched = videoGameMatchesFavoritesFilter(superMarioOdyssey, filters);
+        expect(isMatched).toEqual(true);
+      });
     });
   });
 });
@@ -140,6 +163,7 @@ describe('when the game is falsy', () => {
 
   describe('videoGameMatchesPlatformFilter(falsy, "Nintendo Switch")', () => {
     const nintendoSwitch: IVideoGameFilters = {
+      ...createDefaultVideoGameFilters(),
       platform: 'Nintendo Switch'
     };
 

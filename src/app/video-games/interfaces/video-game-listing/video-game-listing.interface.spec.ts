@@ -4,14 +4,15 @@ import {
   getVideoGames, getVideoGame
 } from './video-game-listing.interface';
 import {createVideoGame} from '../video-game/video-game.interface';
+import {createDefaultVideoGameFilters} from './video-game-filters.interface';
 
 describe('when there is a list of 3 unsorted video games', () => {
   const unsortedVideoGameListing: IVideoGameListing = {
     ...createDefaultVideoGameListing(),
     videoGames: [
-      createVideoGame('1', 'Super Mario', false),
-      createVideoGame('2', 'Legend of Zelda', true),
-      createVideoGame('3', 'Metroid', false),
+      createVideoGame('1', 'Super Mario'),
+      createVideoGame('2', 'Legend of Zelda'),
+      createVideoGame('3', 'Metroid'),
     ]
   };
 
@@ -48,10 +49,11 @@ describe('when there is a list of games from different platforms', () => {
   const videoGameListing: IVideoGameListing = {
     ...createDefaultVideoGameListing(),
     videoGames: [
-      createVideoGame('1', 'Super Mario Odyssey', false, 'Nintendo Switch'),
-      createVideoGame('2', 'Pillars of Eternity', false, 'PC')
+      createVideoGame('1', 'Super Mario Odyssey', 'Nintendo Switch'),
+      createVideoGame('2', 'Pillars of Eternity', 'PC')
     ],
     filters: {
+      ...createDefaultVideoGameFilters(),
       platform: 'PC'
     }
   };
@@ -67,10 +69,11 @@ describe('when there is a list of games from different platforms', () => {
   const videoGameListing: IVideoGameListing = {
     ...createDefaultVideoGameListing(),
     videoGames: [
-      createVideoGame('1', 'Super Mario Odyssey', false, 'Nintendo Switch'),
-      createVideoGame('2', 'Pillars of Eternity', false, 'PC')
+      createVideoGame('1', 'Super Mario Odyssey', 'Nintendo Switch'),
+      createVideoGame('2', 'Pillars of Eternity', 'PC')
     ],
     filters: {
+      ...createDefaultVideoGameFilters(),
       platform: 'PC'
     }
   };
@@ -86,8 +89,8 @@ describe('when there is a list of games with a search query', () => {
   const videoGameListing: IVideoGameListing = {
     ...createDefaultVideoGameListing(),
     videoGames: [
-      createVideoGame('1', 'Super Mario Odyssey', false),
-      createVideoGame('2', 'Pillars of Eternity', false)
+      createVideoGame('1', 'Super Mario Odyssey'),
+      createVideoGame('2', 'Pillars of Eternity')
     ],
     searchQuery: 'Sup'
   };

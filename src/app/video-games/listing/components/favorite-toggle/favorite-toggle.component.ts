@@ -11,5 +11,5 @@ export class FavoriteToggleComponent {
   public active: boolean;
 
   @Output()
-  public onToggle = new EventEmitter();
+  public onToggle = new EventEmitter<void>();
 }

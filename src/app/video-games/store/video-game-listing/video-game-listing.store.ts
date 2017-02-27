@@ -11,6 +11,7 @@ import {
 import {IVideoGame} from '../../interfaces/video-game/video-game.interface';
 import {IAppState} from '../../../interfaces/app-state.interface';
 import {createAction} from '../../../store/create-action';
+import {IVideoGameFilters} from '../../interfaces/video-game-listing/video-game-filters.interface';
 
 @Injectable()
 export class VideoGameListingStore {
@@ -20,7 +21,7 @@ export class VideoGameListingStore {
   public static RETRIEVE_ERROR = 'VIDEO_GAME_LISTING_RETRIEVE_ERROR';
   public static SEARCH = 'VIDEO_GAME_LISTING_SEARCH';
   public static FILTER_PLATFORM = 'VIDEO_GAME_LISTING_FILTER_PLATFORM';
-  public static FILTER_FAVORITES = 'VIDEO_GAME_LISTING_FILTER_FAVORITES';
+  public static TOGGLE_FAVORITE_FILTER = 'VIDEO_GAME_LISTING_FILTER_FAVORITES';
   public static TOGGLE_FAVORITE = 'VIDEO_GAME_TOGGLE_FAVORITE';
 
   constructor(private store: Store<IAppState>) {
@@ -29,6 +30,11 @@ export class VideoGameListingStore {
 
   public getVideoGameListing(): Observable<IVideoGameListing> {
     return this.store.select(appState => appState.videoGameListing);
+  }
+
+  public getVideoGameFilters(): Observable<IVideoGameFilters> {
+    return this.getVideoGameListing()
+      .map(videoGameListing => videoGameListing.filters);
   }
 
   public getVideoGames(): Observable<Array<IVideoGame>> {
@@ -53,8 +59,8 @@ export class VideoGameListingStore {
     this.store.dispatch(createAction(VideoGameListingStore.FILTER_PLATFORM, { platform }));
   }
 
-  public filterFavorites(filter: boolean) {
-    this.store.dispatch(createAction(VideoGameListingStore.FILTER_FAVORITES, {favorites: filter}));
+  public toggleFavoriteFilter() {
+    this.store.dispatch(createAction(VideoGameListingStore.TOGGLE_FAVORITE_FILTER));
   }
 
   public toggleFavorite(id: string) {

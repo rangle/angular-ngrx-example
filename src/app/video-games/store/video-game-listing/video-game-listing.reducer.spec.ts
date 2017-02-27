@@ -40,12 +40,12 @@ describe('videoGameListingReducer(videoGameListing, retrieveSuccessAction)', () 
     isLoading: true
   };
   const retrieveSuccessAction = createAction(VideoGameListingStore.RETRIEVE_SUCCESS, {
-    videoGames: [createVideoGame('1', 'Super Mario', false)]
+    videoGames: [createVideoGame('1', 'Super Mario')]
   });
 
   it('set the videoGameListing list', () => {
     const newVideoGameListing = videoGameListingReducer(videoGameListing, retrieveSuccessAction);
-    expect(newVideoGameListing.videoGames).toEqual([createVideoGame('1', 'Super Mario', false)]);
+    expect(newVideoGameListing.videoGames).toEqual([createVideoGame('1', 'Super Mario')]);
   });
 
   it('should set isLoading to false', () => {
@@ -100,7 +100,7 @@ describe('videoGameListingReducer(videoGameListing, filterPlatformAction)', () =
 
 describe('videoGameListingReducer(videoGameListing, filterFavoritesAction)', () => {
   const videoGameListing = createDefaultVideoGameListing();
-  const filterFavoritesAction = createAction(VideoGameListingStore.FILTER_FAVORITES, {
+  const filterFavoritesAction = createAction(VideoGameListingStore.TOGGLE_FAVORITE_FILTER, {
     favorites: true
   });
 
@@ -117,8 +117,8 @@ describe('videoGameListingReducer(videoGameListing, filterFavoritesAction)', () 
 describe('videoGameListingReducer(videoGameListing, toggleFavouriteAction)', () => {
   const retrieveSuccessAction = createAction(VideoGameListingStore.RETRIEVE_SUCCESS, {
     videoGames: [
-      createVideoGame('1', 'Super Mario', true),
-      createVideoGame('2', 'Legend of Zelda', false)
+      createVideoGame('1', 'Super Mario'),
+      createVideoGame('2', 'Legend of Zelda')
     ]
   });
   const videoGameListing = videoGameListingReducer(createDefaultVideoGameListing(), retrieveSuccessAction);

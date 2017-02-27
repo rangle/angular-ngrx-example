@@ -5,7 +5,7 @@ import {RouterModule} from '@angular/router';
 import {SharedComponentsModule} from '../../shared/components/shared-components.module';
 
 import {
-  VideoGameFilterComponent,
+  VideoGameFiltersComponent,
   VideoGameListingComponent,
   VideoGameListingPageComponent,
   VideoGameListItemComponent,
@@ -22,7 +22,7 @@ import { FavoriteToggleComponent } from './components/favorite-toggle/favorite-t
     SharedComponentsModule
   ],
   declarations: [
-    VideoGameFilterComponent,
+    VideoGameFiltersComponent,
     VideoGameListingComponent,
     VideoGameListingPageComponent,
     VideoGameListItemComponent,

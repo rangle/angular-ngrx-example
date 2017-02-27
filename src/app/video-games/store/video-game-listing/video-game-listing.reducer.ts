@@ -47,12 +47,12 @@ export function videoGameListingReducer(
           platform: action.payload.platform
         }
       };
-    case VideoGameListingStore.FILTER_FAVORITES:
+    case VideoGameListingStore.TOGGLE_FAVORITE_FILTER:
       return {
         ...state,
         filters: {
           ...state.filters,
-          favorites: action.payload.favorites
+          favorites: !state.filters.favorites
         }
       };
     case VideoGameListingStore.TOGGLE_FAVORITE:
