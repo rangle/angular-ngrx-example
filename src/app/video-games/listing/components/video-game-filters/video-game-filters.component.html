@@ -6,11 +6,5 @@
           value="{{platform}}">{{platform}}</option>
 </select>
 
-<label>
-    <input
-      #favoritesFilter
-      name="favoritesFilter"
-      type="checkbox"
-      (change)="favoritesFilterChanged.emit(favoritesFilter.checked)">
-    Show Favorites
-</label>
+<app-favorite-toggle [active]="filters.favorites"
+                     (onToggle)="favoritesFilterChanged.emit()"></app-favorite-toggle>

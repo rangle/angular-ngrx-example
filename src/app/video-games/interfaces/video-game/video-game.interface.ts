@@ -3,23 +3,23 @@ import {IVideoGameFilters} from '../video-game-listing/video-game-filters.interf
 export interface IVideoGame {
   readonly id: string;
   readonly title: string;
-  readonly favorite: boolean;
   readonly platform?: string;
   readonly description?: string;
   readonly youtubeUrl?: string;
   readonly imageUrl?: string;
+  readonly favorite?: boolean;
 }
 
 export function createVideoGame(
   id: string,
   title: string,
-  favorite: boolean,
   platform?: string,
   description?: string,
   youtubeUrl?: string,
   imageUrl?: string,
+  favorite = false,
 ) {
-  return {id, title, favorite, platform, description, youtubeUrl, imageUrl};
+  return {id, title, platform, description, youtubeUrl, imageUrl, favorite};
 }
 
 function textMatchesSearchQuery(text: string, searchQuery: string) {
@@ -54,7 +54,7 @@ export function videoGameMatchesFavoritesFilter(videoGame: IVideoGame, filters: 
     return false;
   }
 
-  return Boolean(filters) && Boolean(filters.favorites) ?
+  return Boolean(filters) && filters.favorites === true ?
     videoGame.favorite :
     true;
 }

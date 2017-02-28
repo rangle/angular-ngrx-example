@@ -1,10 +1,11 @@
 <app-loading-container [loadable]="videoGames$ | async">
   <header>
     <app-video-game-search (queryChanged)="search($event)"></app-video-game-search>
-    <app-video-game-filter [platforms]="(platforms$ | async).list"
-                           (platformFilterChanged)="filterPlatform($event)"
-                           (favoritesFilterChanged)="filterFavorites($event)">
-    </app-video-game-filter>
+    <app-video-game-filters [filters]="videoGameFilters$ | async"
+                            [platforms]="(platforms$ | async).list"
+                            (platformFilterChanged)="filterPlatform($event)"
+                            (favoritesFilterChanged)="filterFavorites()">
+    </app-video-game-filters>
   </header>
 
   <app-video-game-listing [videoGames]="videoGames$ | async">
