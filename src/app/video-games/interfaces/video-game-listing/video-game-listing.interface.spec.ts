@@ -4,6 +4,7 @@ import {
   getVideoGames, getVideoGame
 } from './video-game-listing.interface';
 import {createVideoGame} from '../video-game/video-game.interface';
+import {createDefaultVideoGameFilters} from './video-game-filters.interface';
 
 describe('when there is a list of 3 unsorted video games', () => {
   const unsortedVideoGameListing: IVideoGameListing = {
@@ -52,6 +53,7 @@ describe('when there is a list of games from different platforms', () => {
       createVideoGame('2', 'Pillars of Eternity', false, 'PC')
     ],
     filters: {
+      ...createDefaultVideoGameFilters(),
       platform: 'PC'
     }
   };
@@ -71,6 +73,7 @@ describe('when there is a list of games from different platforms', () => {
       createVideoGame('2', 'Pillars of Eternity', false, 'PC')
     ],
     filters: {
+      ...createDefaultVideoGameFilters(),
       platform: 'PC'
     }
   };

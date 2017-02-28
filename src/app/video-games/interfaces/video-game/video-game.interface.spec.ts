@@ -3,7 +3,10 @@ import {
   videoGameMatchesPlatformFilter,
   videoGameMatchesFavoritesFilter
 } from './video-game.interface';
-import {IVideoGameFilters} from '../video-game-listing/video-game-filters.interface';
+import {
+  IVideoGameFilters,
+  createDefaultVideoGameFilters
+} from '../video-game-listing/video-game-filters.interface';
 
 describe('with Super Mario Odyssey', () => {
   const superMarioOdyssey: IVideoGame = {
@@ -46,6 +49,7 @@ describe('with Super Mario Odyssey', () => {
   describe('videoGameMatchesPlatformFilter(superMarioOdyssey, nintendoSwitch)', () => {
     it('returns true', () => {
       const nintendoSwitch: IVideoGameFilters = {
+        ...createDefaultVideoGameFilters(),
         platform: 'Nintendo Switch'
       };
 
@@ -57,6 +61,7 @@ describe('with Super Mario Odyssey', () => {
   describe('videoGameMatchesPlatformFilter(superMarioOdyssey, nintendoSwitch)', () => {
     it('returns true', () => {
       const nintendoSwitch: IVideoGameFilters = {
+        ...createDefaultVideoGameFilters(),
         platform: 'Nintendo Switch'
       };
 
@@ -68,6 +73,7 @@ describe('with Super Mario Odyssey', () => {
   describe('videoGameMatchesPlatformFilter(superMarioOdyssey, pc)', () => {
     it('returns false', () => {
       const pc: IVideoGameFilters = {
+        ...createDefaultVideoGameFilters(),
         platform: 'PC'
       };
 
@@ -86,6 +92,7 @@ describe('with Super Mario Odyssey', () => {
   describe('videoGameMatchesFavoritesFilter(superMarioOdyssey, favorites:true)', () => {
     it('returns true', () => {
       const showFavorites: IVideoGameFilters = {
+        ...createDefaultVideoGameFilters(),
         favorites: true
       };
 
@@ -98,6 +105,7 @@ describe('with Super Mario Odyssey', () => {
     it('returns false', () => {
       const mario = {...superMarioOdyssey, favorite: false};
       const showFavorites: IVideoGameFilters = {
+        ...createDefaultVideoGameFilters(),
         favorites: true
       };
 
@@ -109,6 +117,7 @@ describe('with Super Mario Odyssey', () => {
   describe('videoGameMatchesFavoritesFilter(superMarioOdyssey, favorites:false)', () => {
     it('returns true', () => {
       const showFavorites: IVideoGameFilters = {
+        ...createDefaultVideoGameFilters(),
         favorites: false
       };
 
@@ -121,6 +130,7 @@ describe('with Super Mario Odyssey', () => {
     it('returns true', () => {
       const mario = {...superMarioOdyssey, favorite: false};
       const showFavorites: IVideoGameFilters = {
+        ...createDefaultVideoGameFilters(),
         favorites: false
       };
 
@@ -140,6 +150,7 @@ describe('when the game is falsy', () => {
 
   describe('videoGameMatchesPlatformFilter(falsy, "Nintendo Switch")', () => {
     const nintendoSwitch: IVideoGameFilters = {
+      ...createDefaultVideoGameFilters(),
       platform: 'Nintendo Switch'
     };
 
