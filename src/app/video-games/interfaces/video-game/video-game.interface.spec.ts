@@ -18,6 +18,7 @@ describe('with Super Mario Odyssey', () => {
       description: 'description',
       platform: 'Nintendo Switch',
       youtubeUrl: 'youtube.com',
+      favorite: false,
     };
   });
 
