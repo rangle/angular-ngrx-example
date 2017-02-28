@@ -5,6 +5,7 @@ import {
   IVideoGameListing,
   createDefaultVideoGameListing
 } from '../../interfaces/video-game-listing/video-game-listing.interface';
+import {updateChildObject} from '../../../store/reducer-helpers';
 
 export function videoGameListingReducer(
   state: IVideoGameListing,
@@ -56,13 +57,14 @@ export function videoGameListingReducer(
         }
       };
     case VideoGameListingStore.TOGGLE_FAVORITE:
-      const newVideoGames = state.videoGames
-        .map(game => {
-          return game.id === action.payload.id ?
-            {...game, favorite: !game.favorite} : game;
-        });
-
-        return {...state, videoGames: newVideoGames};
+      return {
+        ...state,
+        videoGames: updateChildObject(
+          state.videoGames,
+          (game) => game.id === action.payload.id,
+          (game) => ({favorite: !game.favorite}),
+        )
+      };
     default:
       return state;
   }
