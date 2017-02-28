@@ -11,7 +11,8 @@
     "start": "npm run lint && ng serve",
     "test": "npm run lint && ng test --watch=false",
     "test-watch": "npm run lint && ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {

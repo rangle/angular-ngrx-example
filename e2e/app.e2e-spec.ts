@@ -1,14 +1,14 @@
-import { UpgradeProjectPage } from './app.po';
+import { VideoGameTrailersPage } from './app.po';
 
-describe('upgrade-project App', () => {
-  let page: UpgradeProjectPage;
+describe('Root', () => {
+  let page: VideoGameTrailersPage;
 
   beforeEach(() => {
-    page = new UpgradeProjectPage();
+    page = new VideoGameTrailersPage();
   });
 
-  it('should display message saying app works', () => {
+  it('should display the header text', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    expect(page.getParagraphText()).toEqual('Video Game Trailers');
   });
 });

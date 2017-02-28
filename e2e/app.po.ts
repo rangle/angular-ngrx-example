@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-export class UpgradeProjectPage {
+export class VideoGameTrailersPage {
 
   public navigateTo() {
     return browser.get('/');
