@@ -1,6 +1,5 @@
-import {APP_BASE_HREF} from '@angular/common';
 import {async} from '@angular/core/testing';
-import {RouterModule} from '@angular/router';
+import {RouterTestingModule} from '@angular/router/testing';
 
 import {configureTestModule} from '../../../test/configure-test-module.function';
 import {RootComponent} from './root.component';
@@ -11,10 +10,7 @@ describe('RootComponent', () => {
 
   beforeEach(configureTestModule({
     imports: [
-      RouterModule.forRoot([])
-    ],
-    providers: [
-      { provide: APP_BASE_HREF, useValue : '/' }
+      RouterTestingModule.withRoutes([])
     ],
     declarations: [
       RootComponent

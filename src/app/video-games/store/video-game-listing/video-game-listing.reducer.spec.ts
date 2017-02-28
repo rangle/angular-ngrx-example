@@ -100,9 +100,7 @@ describe('videoGameListingReducer(videoGameListing, filterPlatformAction)', () =
 
 describe('videoGameListingReducer(videoGameListing, filterFavoritesAction)', () => {
   const videoGameListing = createDefaultVideoGameListing();
-  const filterFavoritesAction = createAction(VideoGameListingStore.TOGGLE_FAVORITE_FILTER, {
-    favorites: true
-  });
+  const filterFavoritesAction = createAction(VideoGameListingStore.TOGGLE_FAVORITE_FILTER);
 
   it('favorites filter should be false', () => {
     expect(videoGameListing.filters.favorites).toEqual(false);
