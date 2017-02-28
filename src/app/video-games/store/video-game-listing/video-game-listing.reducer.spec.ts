@@ -113,23 +113,20 @@ describe('videoGameListingReducer(videoGameListing, filterFavoritesAction)', () 
 });
 
 describe('videoGameListingReducer(videoGameListing, toggleFavouriteAction)', () => {
-  const retrieveSuccessAction = createAction(VideoGameListingStore.RETRIEVE_SUCCESS, {
+  const videoGameListing = {
+    ...createDefaultVideoGameListing(),
     videoGames: [
-      createVideoGame('1', 'Super Mario'),
-      createVideoGame('2', 'Legend of Zelda')
+      createVideoGame('1', 'Legend of Zelda')
     ]
+  };
+
+  it('should be false', () => {
+    expect(videoGameListing.videoGames[0].favorite).toEqual(false);
   });
-  const videoGameListing = videoGameListingReducer(createDefaultVideoGameListing(), retrieveSuccessAction);
 
   it('should set the "Legend of Zelda" favorite property to true', () => {
-    const toggleFavoriteAction = createAction(VideoGameListingStore.TOGGLE_FAVORITE, {id: '2'});
-    const newVideoGameListing = videoGameListingReducer(videoGameListing, toggleFavoriteAction);
-    expect(newVideoGameListing.videoGames[1].favorite).toEqual(true);
-  });
-
-  it('should set the "Super Mario" favorite property to false', () => {
     const toggleFavoriteAction = createAction(VideoGameListingStore.TOGGLE_FAVORITE, {id: '1'});
     const newVideoGameListing = videoGameListingReducer(videoGameListing, toggleFavoriteAction);
-    expect(newVideoGameListing.videoGames[1].favorite).toEqual(false);
+    expect(newVideoGameListing.videoGames[0].favorite).toEqual(true);
   });
 });
