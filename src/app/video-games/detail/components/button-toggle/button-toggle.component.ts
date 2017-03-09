@@ -12,4 +12,5 @@ export class ButtonToggleComponent {
 
   @Output()
   public onToggle = new EventEmitter();
+
 }

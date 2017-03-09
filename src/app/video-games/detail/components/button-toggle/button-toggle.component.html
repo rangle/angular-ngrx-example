@@ -1,6 +1,4 @@
-<button
-  [class.toggled]="isToggled"
-  (click)="onToggle.emit();"
->
+<button [class.toggled]="isToggled"
+        (click)="onToggle.emit()">
   <ng-content></ng-content>
 </button>

@@ -1,6 +1,4 @@
-<button
-  (click)="onToggle.emit();"
-  [class.active]="active"
->
+<button (click)="onToggle.emit();"
+        [class.active]="active">
   <span class="fa fa-2x fa-heart{{active ? '' : '-o'}}"></span>
 </button>

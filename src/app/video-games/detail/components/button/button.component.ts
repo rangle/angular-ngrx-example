@@ -12,4 +12,5 @@ export class ButtonComponent {
 
   @Output()
   public onButtonPressed = new EventEmitter();
+
 }
