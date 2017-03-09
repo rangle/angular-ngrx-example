@@ -1,8 +1,6 @@
 <img [src]="videoGame.imageUrl" />
+<h3>{{videoGame.title}}</h3>
 <section class="details">
-  <h3>{{videoGame.title}}</h3>
-</section>
-<section class="footer">
   <span class="platform">{{videoGame.platform}}</span>
   <app-favorite-toggle [active]="videoGame.favorite"
                        (onToggle)="toggleVideoGameFavorite();">

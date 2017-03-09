@@ -11,19 +11,14 @@
     border-radius: 0.35rem 0.35rem 0 0;
   }
 
-  .details {
+  h3 {
+    color: #455A64;
+    margin: 0;
     padding: 1rem;
-
-    h3 {
-      margin: 0;
-      text-align: center;
-      color: #455A64;
-    }
-
-
+    text-align: center;
   }
 
-  .footer {
+  .details {
     padding: 0.75rem 1.25rem;
     background-color: #f7f7f9;
     border-radius: 0 0 0.35rem 0.35rem;
@@ -34,22 +29,4 @@
       color: #78909C;
     }
   }
-
-    .favorite-btn {
-      border: none;
-      background: none;
-      float: right;
-      color: #B0BEC5;
-
-      &.active {
-        color: #F44336;
-      }
-
-      &:focus {
-        outline: none;
-      }
-      &:active {
-        transform: scale(1.2,1.2);
-      }
-    }
 }
