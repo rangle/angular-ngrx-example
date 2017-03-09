@@ -64,10 +64,7 @@ export class VideoGameListingStore {
   }
 
   public toggleFavorite(id: string) {
-    this.store.dispatch({
-      type: VideoGameListingStore.TOGGLE_FAVORITE,
-      payload: {id}
-    });
+    this.store.dispatch(createAction(VideoGameListingStore.TOGGLE_FAVORITE, {id}));
   }
 
 }
