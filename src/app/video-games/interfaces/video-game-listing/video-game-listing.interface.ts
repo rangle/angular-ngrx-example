@@ -1,4 +1,3 @@
-import {ILoadable} from '../../.';
 import {
   IVideoGame, videoGameMatchesSearchQuery,
   videoGameMatchesPlatformFilter,
@@ -8,6 +7,7 @@ import {
   IVideoGameFilters,
   createDefaultVideoGameFilters
 } from './video-game-filters.interface';
+import {ILoadable} from '../../../loading/interfaces/loadable/loadable';
 
 export interface IVideoGameListing extends ILoadable {
   filters: IVideoGameFilters;

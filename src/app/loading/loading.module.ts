@@ -5,7 +5,7 @@ import {RouterModule} from '@angular/router';
 import {
   LoadingContainerComponent,
   SpinnerComponent
-} from './index';
+} from './components/index';
 
 const components = [
   LoadingContainerComponent,
