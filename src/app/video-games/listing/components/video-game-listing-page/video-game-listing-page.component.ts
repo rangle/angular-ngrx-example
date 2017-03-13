@@ -14,17 +14,11 @@ import {IVideoGameFilters} from '../../../interfaces/video-game-listing/video-ga
 })
 export class VideoGameListingPageComponent {
 
-  private platforms$: Observable<IPlatforms>;
-  private videoGames$: Observable<Array<IVideoGame>>;
-  private videoGameFilters$: Observable<IVideoGameFilters>;
-
   constructor(
-    private platformsStore: PlatformsStore,
-    private videoGameListingStore: VideoGameListingStore
+    public platformsStore: PlatformsStore,
+    public videoGameListingStore: VideoGameListingStore
   ) {
-    this.platforms$ = platformsStore.getPlatforms();
-    this.videoGames$ = videoGameListingStore.getVideoGames();
-    this.videoGameFilters$ = videoGameListingStore.getVideoGameFilters();
+
   }
 
   public search(query: string) {

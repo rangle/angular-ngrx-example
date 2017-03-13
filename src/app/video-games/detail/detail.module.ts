@@ -2,31 +2,30 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
 
-import {SharedComponentsModule} from '../../shared/components/shared-components.module';
+import {LoadingModule} from '../../loading/components/loading-components.module';
 
 import {
+  ButtonComponent,
+  ButtonGroupComponent,
+  ButtonToggleComponent,
   VideoGameDetailComponent,
   VideoGameDetailPageComponent,
   YouTubeVideoComponent,
-  ButtonGroupComponent,
-  ButtonComponent,
-  ButtonToggleComponent
 } from './components';
-
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
-    SharedComponentsModule
+    LoadingModule,
   ],
   declarations: [
+    ButtonComponent,
+    ButtonGroupComponent,
+    ButtonToggleComponent,
     VideoGameDetailComponent,
     VideoGameDetailPageComponent,
     YouTubeVideoComponent,
-    ButtonGroupComponent,
-    ButtonComponent,
-    ButtonToggleComponent
   ],
   providers: []
 })
