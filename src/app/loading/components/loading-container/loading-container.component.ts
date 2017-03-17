@@ -1,6 +1,6 @@
-import {Component, Input, OnChanges} from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 
-import {ILoadable} from '../../interfaces/loadable/loadable';
+import { ILoadable } from '../../interfaces/loadable/loadable';
 
 @Component({
   selector: 'app-loading-container',

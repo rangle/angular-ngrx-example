@@ -11,7 +11,7 @@ import 'rxjs/add/operator/distinctUntilChanged';
 export class VideoGameSearchComponent {
 
   @Output()
-  private queryChanged = new EventEmitter<string>();
+  public queryChanged = new EventEmitter<string>();
 
   private query$: Subject<string> = new Subject<string>();
 
