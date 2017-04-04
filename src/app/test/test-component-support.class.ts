@@ -1,5 +1,5 @@
-import {DebugElement, Type} from '@angular/core';
-import {ComponentFixture, TestBed} from '@angular/core/testing';
+import { DebugElement, Type } from '@angular/core';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 export class TestComponentSupport<T> {
 
@@ -22,7 +22,7 @@ export class TestComponentSupport<T> {
   }
 
   public update(): void {
-    const component = <any> this.component;
+    const component = this.component as any;
 
     if (component.ngOnChanges) {
       component.ngOnChanges();
@@ -52,7 +52,8 @@ export class TestComponentSupport<T> {
   }
 
   public getClassNames(selector: string) {
-    return this.getAttributeValue(selector, 'class').split(' ');
+    const classesArray = this.getAttributeValue(selector, 'class');
+    return !classesArray ? [] : classesArray.split(' ');
   }
 
   public getInnerHtml(selector: string) {
