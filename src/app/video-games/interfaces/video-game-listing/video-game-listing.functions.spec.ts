@@ -1,10 +1,11 @@
+import { createVideoGame } from '../video-game';
+import { IVideoGameListing } from './video-game-listing.interface';
 import {
-  IVideoGameListing,
   createDefaultVideoGameListing,
-  getVideoGames, getVideoGame
-} from './video-game-listing.interface';
-import {createVideoGame} from '../video-game/video-game.interface';
-import {createDefaultVideoGameFilters} from './video-game-filters.interface';
+  getVideoGame,
+  getVideoGames
+} from './video-game-listing.functions';
+import { createDefaultVideoGameFilters } from './video-game-filters.functions';
 
 describe('when there is a list of 3 unsorted video games', () => {
   const unsortedVideoGameListing: IVideoGameListing = {

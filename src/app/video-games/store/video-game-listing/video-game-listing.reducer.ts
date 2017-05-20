@@ -1,11 +1,11 @@
-import {Action} from '@ngrx/store';
+import { Action } from '@ngrx/store';
 
-import {VideoGameListingStore} from './video-game-listing.store';
+import { updateChildObject } from '../../../store/reducer-helpers';
+import { VideoGameListingStore } from './video-game-listing.store';
 import {
+  createDefaultVideoGameListing,
   IVideoGameListing,
-  createDefaultVideoGameListing
-} from '../../interfaces/video-game-listing/video-game-listing.interface';
-import {updateChildObject} from '../../../store/reducer-helpers';
+} from '../../interfaces';
 
 export function videoGameListingReducer(
   state: IVideoGameListing,

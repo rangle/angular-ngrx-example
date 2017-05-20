@@ -1,11 +1,11 @@
-import {createAction} from '../../../store/create-action';
-import {videoGameListingReducer} from './video-game-listing.reducer';
-import {VideoGameListingStore} from './video-game-listing.store';
+import { createAction } from '../../../store/create-action';
+import { videoGameListingReducer } from './video-game-listing.reducer';
+import { VideoGameListingStore } from './video-game-listing.store';
 import {
   createDefaultVideoGameListing,
-  IVideoGameListing
-} from '../../interfaces/video-game-listing/video-game-listing.interface';
-import {createVideoGame} from '../../interfaces/video-game/video-game.interface';
+  createVideoGame,
+  IVideoGameListing,
+} from '../../interfaces';
 
 describe('videoGameListingReducer(falsy, unknownAction)', () => {
   const unknownAction = createAction('UNKNOWN');

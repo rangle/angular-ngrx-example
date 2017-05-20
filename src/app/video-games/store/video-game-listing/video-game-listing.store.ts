@@ -1,17 +1,17 @@
-import {Injectable} from '@angular/core';
-import {Store} from '@ngrx/store';
-import {Observable} from 'rxjs/Observable';
+import { Injectable } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
+import { IAppState } from '../../../interfaces/app-state.interface';
+import { createAction } from '../../../store/create-action';
 import {
-  IVideoGameListing,
   getVideoGames,
-  getVideoGame
-} from '../../interfaces/video-game-listing/video-game-listing.interface';
-import {IVideoGame} from '../../interfaces/video-game/video-game.interface';
-import {IAppState} from '../../../interfaces/app-state.interface';
-import {createAction} from '../../../store/create-action';
-import {IVideoGameFilters} from '../../interfaces/video-game-listing/video-game-filters.interface';
+  getVideoGame,
+  IVideoGame,
+  IVideoGameFilters,
+  IVideoGameListing,
+} from '../../interfaces';
 
 @Injectable()
 export class VideoGameListingStore {
@@ -24,9 +24,7 @@ export class VideoGameListingStore {
   public static TOGGLE_FAVORITE_FILTER = 'VIDEO_GAME_LISTING_FILTER_FAVORITES';
   public static TOGGLE_FAVORITE = 'VIDEO_GAME_TOGGLE_FAVORITE';
 
-  constructor(private store: Store<IAppState>) {
-
-  }
+  constructor(private store: Store<IAppState>) {}
 
   public getVideoGameListing(): Observable<IVideoGameListing> {
     return this.store.select(appState => appState.videoGameListing);
@@ -52,11 +50,11 @@ export class VideoGameListingStore {
   }
 
   public search(query: string) {
-    this.store.dispatch(createAction(VideoGameListingStore.SEARCH, { query }));
+    this.store.dispatch(createAction(VideoGameListingStore.SEARCH, {query}));
   }
 
   public filterPlatform(platform: string) {
-    this.store.dispatch(createAction(VideoGameListingStore.FILTER_PLATFORM, { platform }));
+    this.store.dispatch(createAction(VideoGameListingStore.FILTER_PLATFORM, {platform}));
   }
 
   public toggleFavoriteFilter() {

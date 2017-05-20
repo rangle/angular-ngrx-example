@@ -1,12 +1,10 @@
+import { createDefaultVideoGameFilters, IVideoGameFilters } from '../video-game-listing';
+import { IVideoGame } from './video-game.interface';
 import {
-  videoGameMatchesSearchQuery, IVideoGame,
+  videoGameMatchesFavoritesFilter,
   videoGameMatchesPlatformFilter,
-  videoGameMatchesFavoritesFilter
-} from './video-game.interface';
-import {
-  IVideoGameFilters,
-  createDefaultVideoGameFilters
-} from '../video-game-listing/video-game-filters.interface';
+  videoGameMatchesSearchQuery
+} from './video-game.functions';
 
 describe('with Super Mario Odyssey', () => {
   let superMarioOdyssey: IVideoGame;
