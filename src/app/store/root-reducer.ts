@@ -13,7 +13,7 @@ const reducers = {
 };
 
 const localStorageState = {
-  platforms: []
+  keys: ['platforms']
 };
 
 export function rootReducer(state: any, action: any) {
@@ -21,7 +21,7 @@ export function rootReducer(state: any, action: any) {
     storeLogger({
       collapsed: true
     }),
-    localStorageSync([localStorageState], true),
+    localStorageSync(localStorageState),
     combineReducers
   )(reducers)(state, action);
 }
