@@ -35,7 +35,7 @@
     "ngrx-store-logger": "^0.1.7",
     "rxjs": "^5.2.0",
     "ts-helpers": "^1.1.1",
-    "zone.js": "^0.8.11"
+    "zone.js": "^0.10.2"
   },
   "devDependencies": {
     "@angular/cli": "^1.0.4",
